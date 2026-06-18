@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+<title>曲曲和外公外婆游上海 2026年7-8月</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f0f1f3;color:#222;font-size:18px;line-height:1.7;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto}
+
+/* Banner */
+.banner{background:linear-gradient(135deg,#1565c0 0%,#0277bd 100%);color:#fff;padding:30px 20px 24px;text-align:center}
+.banner h1{font-size:26px;font-weight:700;margin-bottom:8px;letter-spacing:1px}
+.banner p{font-size:17px;opacity:.92;margin-bottom:4px}
+.banner .tags{margin-top:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.banner .tag{background:rgba(255,255,255,.22);border-radius:24px;padding:6px 16px;font-size:15px}
+
+/* Nav */
+.nav{display:flex;justify-content:center;overflow-x:auto;background:#fff;border-bottom:2px solid #e0e4ea;position:sticky;top:0;z-index:100;-webkit-overflow-scrolling:touch}
+.nav button{flex:none;padding:14px 16px;font-size:16px;font-weight:500;background:none;border:none;cursor:pointer;color:#555;white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .2s}
+.nav button.active{color:#1565c0;border-bottom-color:#1565c0}
+
+/* Pages */
+.page{display:none;padding:16px;max-width:780px;margin:0 auto}
+.page.active{display:block}
+
+/* Cards */
+.card{background:#fff;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.card-t{font-size:20px;font-weight:700;color:#1565c0;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.card-t .ico{font-size:24px}
+
+/* Weather Tags */
+.wtag{display:inline-block;border-radius:8px;padding:4px 12px;font-size:14px;font-weight:600;margin:2px 3px 2px 0;vertical-align:middle}
+.wtag-indoor{background:#EEEDFE;color:#3C3489;border:1px solid #AFA9EC}
+.wtag-outdoor{background:#EAF3DE;color:#3B6D11;border:1px solid #97C459}
+.wtag-sun{background:#FAEEDA;color:#854F0B;border:1px solid #EF9F27}
+.wtag-rain{background:#E6F1FB;color:#185FA5;border:1px solid #85B7EB}
+.wtag-shaded{background:#e8f5e9;color:#1b5e20;border:1px solid #a5d6a7}
+
+/* Priority */
+.pri{display:inline-block;border-radius:6px;padding:4px 12px;font-size:14px;font-weight:700;margin:2px 3px 2px 0}
+.pri-1{background:#FCEBEB;color:#A32D2D;border:1px solid #F09595}
+.pri-2{background:#FAEEDA;color:#854F0B;border:1px solid #EF9F27}
+.pri-3{background:#f5f6f8;color:#666;border:1px solid #ddd}
+
+/* Area colors */
+.area-a{border-left:5px solid #639922}
+.area-b{border-left:5px solid #185FA5}
+.area-c{border-left:5px solid #534AB7}
+.area-d{border-left:5px solid #D85A30}
+.area-e{border-left:5px solid #993C1D}
+.area-f{border-left:5px solid #0F6E56}
+
+/* Spot Card */
+.spot-card{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 6px rgba(0,0,0,.07);transition:all .3s}
+.spot-card.visited{opacity:.45;filter:grayscale(.8)}
+.spot-card.visited .spot-title{text-decoration:line-through}
+.spot-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;cursor:pointer;border-radius:14px}
+.spot-hd:hover{background:#f8f9fa}
+.spot-title{font-size:19px;font-weight:700;color:#1a1a1a}
+.spot-sub{font-size:15px;color:#888;margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.spot-arr{font-size:20px;color:#aaa;transition:transform .25s}
+.spot-arr.open{transform:rotate(180deg)}
+.spot-body{display:none;padding:0 18px 18px}
+.spot-body.open{display:block}
+.spot-tags{margin-bottom:10px}
+.spot-section{background:#f5f6f8;border-radius:10px;padding:12px 14px;margin:10px 0}
+.price-hl{background:#EAF3DE;border-radius:6px;padding:8px 14px;font-size:18px;font-weight:700;color:#27500A;display:inline-block;margin:4px 4px 4px 0}
+.discount-hl{background:#E6F1FB;border-radius:6px;padding:8px 14px;font-size:16px;font-weight:600;color:#0C447C;display:inline-block;margin:4px 4px 4px 0}
+.reserve-box{background:#FFF8E1;border-left:4px solid #ffb300;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:16px;color:#5d4037}
+.map-btn{display:inline-block;background:#e3f2fd;color:#1565c0;border-radius:24px;padding:6px 16px;font-size:15px;font-weight:600;text-decoration:none;margin:4px 4px 4px 0;border:1px solid #90caf9}
+
+/* Visited checkbox */
+.visit-btn{display:inline-block;padding:8px 20px;border-radius:24px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid #ccc;color:#888;background:#fff;margin-top:10px;transition:all .2s}
+.visit-btn:hover{border-color:#639922;color:#639922}
+.visit-btn.done{background:#EAF3DE;border-color:#639922;color:#27500A}
+
+/* Trip Day */
+.trip-day{background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.07);overflow:hidden}
+.trip-hd{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;cursor:pointer}
+.trip-title{font-size:19px;font-weight:700;color:#1a1a1a}
+.trip-sub{font-size:15px;color:#888;margin-top:3px}
+.trip-arr{font-size:20px;color:#aaa;transition:transform .25s}
+.trip-arr.open{transform:rotate(180deg)}
+.trip-body{display:none;padding:0 18px 18px}
+.trip-body.open{display:block}
+
+.step{display:flex;gap:14px;margin-bottom:14px}
+.step-ico{font-size:28px;flex:none;margin-top:2px}
+.step-title{font-size:18px;font-weight:600;color:#1a1a1a}
+.step-desc{font-size:16px;color:#444;margin-top:4px}
+
+.info-b{background:#f5f6f8;border-radius:10px;padding:12px 14px;margin:10px 0}
+.info-b p{font-size:16px;color:#333;margin-bottom:6px}
+.info-b p:last-child{margin-bottom:0}
+.info-b strong{color:#1565c0}
+
+.tip{background:#fff8e1;border-left:4px solid #ffb300;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:16px;color:#5d4037}
+.warn{background:#ffebee;border-left:4px solid #e53935;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:16px;color:#b71c1c}
+.green-b{background:#f1f8e9;border-left:4px solid #7cb342;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:16px;color:#33691e}
+
+/* Edit button */
+.edit-btn{background:#fff;border:1.5px solid #ddd;border-radius:8px;padding:5px 10px;font-size:16px;cursor:pointer;transition:all .2s}
+.edit-btn:hover{background:#e3f2fd;border-color:#1565c0}
+
+/* Day changed banner */
+.day-changed-banner{background:#e3f2fd;border-left:4px solid #1565c0;border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:16px;color:#0c447c}
+
+/* Restore button */
+.restore-btn{background:#fff3e0;color:#e65100;border:2px solid #ffcc80;border-radius:24px;padding:8px 20px;font-size:15px;font-weight:600;cursor:pointer;margin-top:10px}
+.restore-btn:hover{background:#ffe0b2}
+
+/* Filter bar */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.filter-btn{padding:10px 18px;border-radius:24px;font-size:16px;font-weight:600;cursor:pointer;border:2px solid #ddd;background:#fff;color:#555;transition:all .2s}
+.filter-btn.active{background:#1565c0;color:#fff;border-color:#1565c0}
+
+/* Calendar */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-head{text-align:center;font-size:14px;font-weight:600;color:#888;padding:8px 0}
+.cal-day{text-align:center;padding:10px 2px;border-radius:10px;font-size:15px;cursor:pointer;border:1.5px solid transparent}
+.cal-day .label-short{display:none}
+/* 不在上海 */
+.cal-day.out{background:#fafafa;color:#bbb;border:1.5px dashed #ddd}
+.cal-day.out .label{color:#ccc}
+/* 必去 - 红色 */
+.cal-day.pri1{background:#fcebeb;color:#a32d2d;font-weight:700;border-color:#f09595}
+.cal-day.pri1 .label{color:#a32d2d;font-weight:600}
+/* 推荐 - 黄色 */
+.cal-day.pri2{background:#faeeda;color:#854f0b;font-weight:700;border-color:#ef9f27}
+.cal-day.pri2 .label{color:#854f0b;font-weight:600}
+/* 可选 - 绿色 */
+.cal-day.pri3{background:#e8f5e9;color:#2e7d32;font-weight:700;border-color:#a5d6a7}
+.cal-day.pri3 .label{color:#2e7d32;font-weight:600}
+/* 抵达/离沪/过渡 */
+.cal-day.trip{background:#e3f2fd;color:#1565c0;font-weight:700;border-color:#90caf9}
+.cal-day.trip .label{color:#1565c0}
+.cal-day.rest{background:#f1f8e9;color:#558b2f}
+.cal-legend{display:flex;gap:18px;margin-top:12px;font-size:14px;flex-wrap:wrap}
+.leg-dot{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:5px;vertical-align:middle}
+
+/* List */
+.list-item{padding:12px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:12px}
+.list-item:last-child{border-bottom:none}
+.list-num{background:#1565c0;color:#fff;min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;flex:none;margin-top:3px}
+.list-content{flex:1}
+.list-name{font-size:18px;font-weight:600}
+.list-desc{font-size:16px;color:#555;margin-top:3px}
+
+/* Emergency */
+.emer-card{background:#fff;border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.emer-title{font-size:19px;font-weight:700;margin-bottom:12px;color:#c62828}
+.emer-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start}
+.emer-item:last-child{border-bottom:none}
+.emer-label{font-size:15px;color:#888;min-width:96px;flex:none}
+.emer-val{font-size:17px;font-weight:600;color:#222}
+.emer-val a{color:#1565c0;text-decoration:none}
+
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.badge{background:#e3f2fd;color:#1565c0;border-radius:8px;padding:5px 14px;font-size:15px;font-weight:500}
+
+.food-card{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.food-name{font-size:19px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
+.food-desc{font-size:16px;color:#555;margin-bottom:4px}
+.food-addr{font-size:15px;color:#1565c0}
+
+/* Reset all btn */
+.reset-btn{background:#ffebee;color:#c62828;border:2px solid #ef9a9a;border-radius:24px;padding:8px 20px;font-size:15px;font-weight:600;cursor:pointer;margin-top:8px}
+
+/* Edit Modal */
+.edit-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;overflow-y:auto}
+.edit-modal-content{background:#fff;margin:60px auto 20px;max-width:500px;border-radius:16px;padding:20px;position:relative}
+.edit-modal-title{font-size:20px;font-weight:700;margin-bottom:16px;color:#1a1a1a}
+.edit-modal-close{position:absolute;top:16px;right:16px;font-size:24px;cursor:pointer;color:#888;background:none;border:none}
+.spot-picker-item{padding:14px;border:1.5px solid #eee;border-radius:12px;margin-bottom:10px;cursor:pointer;transition:all .15s}
+.spot-picker-item:hover{background:#e3f2fd;border-color:#1565c0}
+
+@media(max-width:768px){
+  .page{padding:12px}
+  .card{padding:16px}
+  .trip-hd{padding:14px}
+  .spot-hd{padding:14px}
+  .trip-body,.spot-body{padding:0 14px 14px}
+  .cal-day{padding:8px 2px;font-size:13px}
+  .cal-day .label{font-size:9px;line-height:1.2}
+  .cal-day .label-short{display:none}
+  .emer-item{flex-direction:column;gap:4px}
+  .emer-label{min-width:auto}
+  .edit-modal-content{margin:30px 16px 20px}
+}
+
+@media(max-width:480px){
+  /* 页面与卡片 */
+  .page{padding:10px}
+  .card{padding:14px}
+  .trip-hd{padding:12px}
+  .spot-hd{padding:12px}
+  .trip-body,.spot-body{padding:0 12px 12px}
+
+  /* Banner */
+  .banner{padding:18px 14px 16px}
+  .banner h1{font-size:22px}
+  .banner p{font-size:15px}
+  .banner .tag{font-size:13px;padding:4px 12px}
+  .banner .tags{gap:6px;margin-top:10px}
+
+  /* 导航标签 */
+  .nav button{padding:10px 10px;font-size:14px}
+
+  /* 日历：手机上隐藏完整名称，显示2字简称 */
+  .cal-grid{gap:2px}
+  .cal-head{font-size:11px;padding:5px 0}
+  .cal-day{padding:7px 1px;font-size:13px;border-radius:8px}
+  .cal-day .label{display:none}
+  .cal-day .label-short{display:block;font-size:10px;font-weight:600;line-height:1.2;margin-top:1px}
+  .cal-day.out .label-short{color:#ccc}
+  .cal-day.pri1 .label-short{color:#a32d2d}
+  .cal-day.pri2 .label-short{color:#854f0b}
+  .cal-day.pri3 .label-short{color:#2e7d32}
+  .cal-day.trip .label-short{color:#1565c0}
+  .cal-legend{font-size:12px;gap:8px}
+
+  /* 景点卡片标题 */
+  .spot-title{font-size:17px}
+  .trip-title{font-size:17px}
+  .spot-sub{font-size:13px}
+  .trip-sub{font-size:13px}
+  .card-t{font-size:18px}
+
+  /* 步骤 */
+  .step{gap:10px}
+  .step-ico{font-size:24px}
+  .step-title{font-size:16px}
+  .step-desc{font-size:15px}
+
+  /* 信息框 */
+  .info-b{padding:10px 12px}
+  .info-b p{font-size:15px}
+
+  /* 提示/警告框 */
+  .tip,.warn,.green-b,.day-changed-banner,.reserve-box{font-size:15px;padding:10px 12px}
+
+  /* 天气标签 */
+  .wtag{font-size:12px;padding:3px 8px}
+  .pri{font-size:12px;padding:3px 8px}
+
+  /* 价格高亮 */
+  .price-hl{font-size:15px;padding:6px 10px}
+  .discount-hl{font-size:14px;padding:6px 10px}
+
+  /* 筛选按钮 */
+  .filter-bar{gap:6px}
+  .filter-btn{padding:7px 12px;font-size:14px;border-radius:20px}
+
+  /* 按钮 */
+  .visit-btn{padding:6px 14px;font-size:14px}
+  .map-btn{padding:5px 12px;font-size:14px}
+  .edit-btn{padding:4px 8px;font-size:14px}
+
+  /* 紧急信息：上下排列 */
+  .emer-item{flex-direction:column;gap:2px}
+  .emer-label{min-width:auto;font-size:14px}
+  .emer-val{font-size:15px}
+
+  /* 弹窗满屏 */
+  .edit-modal-content{margin:10px;border-radius:12px;padding:16px}
+  .spot-picker-item{padding:10px}
+  .spot-picker-item div:first-child{font-size:16px}
+  .spot-picker-item div:last-child{font-size:13px}
+
+  /* 餐饮卡片 */
+  .food-name{font-size:17px}
+  .food-desc{font-size:15px}
+  .food-addr{font-size:14px}
+
+  /* 标签/徽章 */
+  .badge{font-size:13px;padding:4px 10px}
+
+  /* 列表 */
+  .list-name{font-size:16px}
+  .list-desc{font-size:15px}
+  .list-num{min-width:26px;height:26px;font-size:14px}
+
+  /* 紧急电话 */
+  #page-emer p[style*="font-size:42px"]{font-size:36px!important}
+  #page-emer p[style*="font-size:26px"]{font-size:22px!important}
+  #page-emer p[style*="font-size:20px"]{font-size:18px!important}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+<h1>曲曲和外公外婆游上海</h1>
+<p>2026年7月16日 — 7月31日</p>
+<div class="tags">
+<span class="tag">外公外婆 70+岁</span>
+<span class="tag">曲曲 12岁半</span>
+<span class="tag">住：徐汇区嘉善路</span>
+</div>
+</div>
+
+<div class="nav" id="navBar">
+<button class="active" data-page="home">行程总览</button>
+<button data-page="daily">每日安排</button>
+<button data-page="spots">景点库</button>
+<button data-page="food">餐饮推荐</button>
+<button data-page="trans">交通指南</button>
+<button data-page="tips">注意事项</button>
+<button data-page="emer">紧急信息</button>
+</div>
+
+<!-- ===== HOME ===== -->
+<div id="page-home" class="page active">
+
+<div class="card">
+<div class="card-t"><span class="ico">🏠</span>民宿地址</div>
+<p style="font-size:19px;font-weight:700;color:#1a1a1a">上海市徐汇区永盛里嘉善路101弄46号一楼前门101室</p>
+<div style="margin-top:12px">
+<a class="map-btn" href="https://uri.amap.com/search?keyword=嘉善路101弄46号&city=上海" target="_blank">高德地图导航</a>
+<a class="map-btn" href="https://api.map.baidu.com/geocoder?address=上海徐汇区嘉善路101弄46号&output=html" target="_blank">百度地图导航</a>
+</div>
+<div class="tip" style="margin-top:12px">建议将此地址截图保存在手机相册，或打印一张随身携带，打车时直接给司机看。</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">📅</span>行程日历</div>
+<p style="font-size:16px;color:#555;margin-bottom:14px">每天均有景点推荐。颜色越深优先级越高，您可以根据当天天气和体力自由选择去或不去。</p>
+<div class="card-t" style="margin-top:4px"><span class="ico">📅</span>行程日历（7月15日—8月1日，共18天）</div>
+<div class="cal-grid">
+<div class="cal-head">日</div><div class="cal-head">一</div><div class="cal-head">二</div><div class="cal-head">三</div><div class="cal-head">四</div><div class="cal-head">五</div><div class="cal-head">六</div>
+<div class="cal-day out" data-cal-date="7-12">12<div class="label">不在上海</div><div class="label-short"></div></div>
+<div class="cal-day out" data-cal-date="7-13">13<div class="label">不在上海</div><div class="label-short"></div></div>
+<div class="cal-day out" data-cal-date="7-14">14<div class="label">不在上海</div><div class="label-short"></div></div>
+<div class="cal-day trip" data-cal-date="7-15">15<div class="label">抵达</div><div class="label-short">抵达</div></div>
+<div class="cal-day pri3" data-cal-date="7-16">16<div class="label">中华艺术宫</div><div class="label-short">艺宫</div></div>
+<div class="cal-day pri2" data-cal-date="7-17">17<div class="label">田子坊</div><div class="label-short">田坊</div></div>
+<div class="cal-day pri2" data-cal-date="7-18">18<div class="label">亲友欢聚日①</div><div class="label-short">聚会</div></div>
+<div class="cal-day pri1" data-cal-date="7-19">19<div class="label">上海自然博物馆</div><div class="label-short">自博</div></div>
+<div class="cal-day pri1" data-cal-date="7-20">20<div class="label">外滩</div><div class="label-short">外滩</div></div>
+<div class="cal-day pri1" data-cal-date="7-21">21<div class="label">豫园</div><div class="label-short">豫园</div></div>
+<div class="cal-day pri2" data-cal-date="7-22">22<div class="label">陆家嘴</div><div class="label-short">陆嘴</div></div>
+<div class="cal-day pri2" data-cal-date="7-23">23<div class="label">上海海洋水族馆</div><div class="label-short">水族</div></div>
+<div class="cal-day pri2" data-cal-date="7-24">24<div class="label">上海科技馆</div><div class="label-short">科技</div></div>
+<div class="cal-day pri2" data-cal-date="7-25">25<div class="label">亲友欢聚日②</div><div class="label-short">聚会</div></div>
+<div class="cal-day pri1" data-cal-date="7-26">26<div class="label">上海博物馆</div><div class="label-short">上博</div></div>
+<div class="cal-day pri2" data-cal-date="7-27">27<div class="label">静安寺</div><div class="label-short">静寺</div></div>
+<div class="cal-day pri2" data-cal-date="7-28">28<div class="label">新天地</div><div class="label-short">新天</div></div>
+<div class="cal-day pri2" data-cal-date="7-29">29<div class="label">上海中心</div><div class="label-short">中心</div></div>
+<div class="cal-day pri3" data-cal-date="7-30">30<div class="label">电影博物馆</div><div class="label-short">影博</div></div>
+<div class="cal-day pri3" data-cal-date="7-31">31<div class="label">苏州河沿岸</div><div class="label-short">苏河</div></div>
+<div class="cal-day trip" data-cal-date="8-1">1<div class="label">离沪</div><div class="label-short">离沪</div></div>
+</div>
+<div class="cal-legend">
+<span><span class="leg-dot" style="background:#fcebeb;border:1px solid #f09595"></span>必去（强烈推荐）</span>
+<span><span class="leg-dot" style="background:#faeeda;border:1px solid #ef9f27"></span>推荐（非常值得一看）</span>
+<span><span class="leg-dot" style="background:#e8f5e9;border:1px solid #a5d6a7"></span>可选（时间充裕时去）</span>
+<span><span class="leg-dot" style="background:#e3f2fd;border:1px solid #90caf9"></span>抵达/离沪</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🌡️</span>7月上海天气须知</div>
+<div class="warn">7月上海是全年最热月份，最高温 36~40°C，非常潮湿。做好防暑是第一要务！</div>
+<div class="info-b">
+<p>☀️ <strong>最热时段：</strong>下午 13:00~16:00，这段时间务必在室内休息</p>
+<p>🌅 <strong>最凉爽：</strong>早晨 8:00~10:00，适合户外景点</p>
+<p>🌧️ <strong>暴雨：</strong>7月会突发雷阵雨，出门带折叠伞</p>
+<p>👴 <strong>外公外婆注意：</strong>每走30分钟找阴凉处休息，随身带水</p>
+</div>
+<div class="badge-row">
+<span class="badge">防晒霜 SPF50+</span>
+<span class="badge">遮阳帽</span>
+<span class="badge">遮阳伞</span>
+<span class="badge">冷感毛巾</span>
+<span class="badge">藿香正气水</span>
+<span class="badge">充电宝</span>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🗺️</span>景点标签说明</div>
+<div class="info-b">
+<p><span class="wtag wtag-indoor">室内</span> 全天候可去，下雨天首选</p>
+<p><span class="wtag wtag-outdoor">户外</span> 需防晒，建议上午去</p>
+<p><span class="wtag wtag-sun">不宜暴晒</span> 仅适合上午9点前或傍晚</p>
+<p><span class="wtag wtag-rain">不宜雨天</span> 雨天请避开</p>
+<p><span class="wtag wtag-shaded">有遮阴</span> 梧桐/商场遮阴，高温天可去</p>
+</div>
+<div style="margin-top:12px">
+<p><span class="pri pri-1">必去</span> 上海最具代表性，强烈推荐</p>
+<p><span class="pri pri-2">推荐</span> 非常值得一看</p>
+<p><span class="pri pri-3">可选</span> 时间充裕时去</p>
+</div>
+</div>
+
+</div>
+
+<!-- ===== DAILY ===== -->
+<div id="page-daily" class="page">
+<div class="card" style="background:#e3f2fd;border:none">
+<p style="font-size:17px;color:#1565c0">每天均有景点推荐，您可以根据当天天气和体力自由选择去或不去。点击展开查看详情，点击 ✏️ 可更换当天景点。</p>
+</div>
+<div class="trip-day" data-date="7-15" data-default-spot="" data-current-spot="">
+<div class="trip-hd" onclick="tog(this)"><div><div class="trip-title">🛬 7月15日 周三 抵达上海</div><div class="trip-sub">入住 · 熟悉周边</div></div><div class="trip-arr">▼</div></div>
+<div class="trip-body">
+<div class="green-b">刚到上海，以安顿为主。傍晚在民宿附近走走，熟悉环境。</div>
+<div class="step"><div class="step-ico">🏠</div><div class="step-content"><div class="step-title">入住民宿，安顿行李</div></div></div>
+<div class="step"><div class="step-ico">🏪</div><div class="step-content"><div class="step-title">附近超市采购</div><div class="step-desc">家乐福（肇嘉浜路店，步行约10分钟），买水、饮料、防晒用品、常备药。</div></div></div>
+<div class="step"><div class="step-ico">🚶</div><div class="step-content"><div class="step-title">傍晚散步 · 永康路 · 感受弄堂氛围</div><div class="step-desc">民宿步行5分钟即达永康路，两侧咖啡馆和小馆，适合慢慢走。</div></div></div>
+<div class="tip">7月日落约19:15，傍晚气温稍降，散步正好。</div>
+</div></div>
+<div class="trip-day" data-date="7-16" data-default-spot="artMuseum" data-current-spot="artMuseum">
+<div class="trip-hd area-f" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🎨 7月16日 周四 中华艺术宫</div>
+    <div class="trip-sub">世博 · 可选 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-16')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🎨</div><div class="step-content"><div class="step-title">中华艺术宫 · 9:30~12:00</div><div class="step-desc">世博中国馆改建，红色斗拱造型本身就是地标。展示近现代中国艺术，建筑外观拍照很出片。全程室内空调，场馆大建议挑重点看。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>8号线→中华艺术宫站</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费（需预约）</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费（需预约）</p>
+<p>⏰ <strong>开放：</strong>10:00~18:00（17:00停止入馆），周一闭馆</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信「中华艺术宫」公众号预约参观。提前1~3天。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=中华艺术宫&city=上海" target="_blank">导航到中华艺术宫</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">世博源商场餐饮层，选择丰富。人均40~80元。</div></div></div><div class="tip"><p>场馆非常大，建议挑2~3个重点展厅看</p><p>外公外婆走累了随时在休息区坐下</p></div></div></div>
+<div class="trip-day" data-date="7-17" data-default-spot="tianzifang" data-current-spot="tianzifang">
+<div class="trip-hd area-a" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🎨 7月17日 周五 田子坊·武康路</div>
+    <div class="trip-sub">徐汇周边 · 推荐 · 户外 · 有遮阴</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-17')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🎨</div><div class="step-content"><div class="step-title">田子坊 · 9:00~11:30</div><div class="step-desc">石库门里弄艺术街区，各种工艺品店、特色小吃、咖啡馆。全程平地，店铺有空调，外公外婆可随时坐下。上午人少，建议早去。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>距民宿步行10~20分钟</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费</p>
+<p>⏰ <strong>开放：</strong>全天（店铺约10:00~22:00）</p>
+</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-sun">不宜暴晒</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=田子坊&city=上海" target="_blank">导航到田子坊</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">田子坊内「老弄堂」本帮菜；或步行至永康路餐厅。人均50~80元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">武康路·衡山路 · 14:00~16:00</div><div class="step-desc">上海最美马路之一，梧桐成荫，两侧老别墅。武康大楼（熨斗楼）是网红打卡点。步道宽敞平缓，外公外婆可慢慢走。法租界风情咖啡馆可坐下来休息。</div></div></div><div class="tip"><p>田子坊和武康路都在徐汇，距离民宿很近，可放在一起</p><p>中午最热时段在咖啡馆休息最舒服</p><p>全程平路，对外公外婆友好</p></div></div></div>
+<div class="trip-day" data-date="7-18" data-default-spot="family" data-current-spot="family">
+<div class="trip-hd area-a" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🎉 7月18日 周六 亲友欢聚日①</div>
+    <div class="trip-sub">徐汇周边 · 推荐 · 室内 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-18')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🎉</div><div class="step-content"><div class="step-title">淮海中路逛街 · 10:00~12:00</div><div class="step-desc">上海顶级商业街，iapm、百盛等大型商场，品牌齐全。室内空调，走累了随时休息。亲友一起逛街更热闹！</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>距民宿步行可达</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费</p>
+<p>⏰ <strong>开放：</strong>商场约10:00~22:00</p>
+</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span><span class="wtag wtag-outdoor">户外</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=淮海中路iapm&city=上海" target="_blank">导航到亲友欢聚日①</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">淮海路沿街餐厅或光明邨大酒家，本帮菜聚餐。人均50~120元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">拍照·购物·聚会 · 14:00~17:00</div><div class="step-desc">在梧桐林荫道拍照、买伴手礼，或在咖啡馆坐下来聊天。不赶时间，开心为主。</div></div></div><div class="tip"><p>光明邨排队较长，建议上午就去排队买熟食</p><p>淮海路很适合外公外婆慢慢逛</p></div></div></div>
+<div class="trip-day" data-date="7-19" data-default-spot="nature" data-current-spot="nature">
+<div class="trip-hd area-c" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🦕 7月19日 周日 上海自然博物馆</div>
+    <div class="trip-sub">人民广场 · 必去 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-19')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🦕</div><div class="step-content"><div class="step-title">上海自然博物馆 · 9:00~12:30</div><div class="step-desc">恐龙化石、动物标本、地球科学。展馆设计精良，互动体验多，是曲曲最爱的上海景点之一！全程室内空调。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>13号线→自然博物馆站1号口，出站即达</p>
+<p>🎫 <strong>门票：</strong>30元/人</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上半价 = 15元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1.3m以下免费，1.3~1.5m半价15元；1.6m以上凭学生证可购学生票约15元</p>
+<p>⏰ <strong>开放：</strong>9:00~17:15（16:30停止入馆），周一闭馆</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信「上海自然博物馆」公众号购票，或美团/大众点评网上购票，到现场扫码。提前1~3天。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海自然博物馆&city=上海" target="_blank">导航到上海自然博物馆</a><div class="tip"><p>展馆非常大，建议重点看恐龙区和动物区</p><p>有馆内餐厅可简单午餐</p><p>建议预留大半天时间</p></div><div class="warn" style="background:#fff3e0;border-left:4px solid #ff9800;color:#e65100">⚠️ 该景点周末人流量大，建议尽早出门（9:00前到达）以避开高峰，或考虑换到工作日前往。</div></div></div>
+<div class="trip-day" data-date="7-20" data-default-spot="bund" data-current-spot="bund">
+<div class="trip-hd area-b" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🌉 7月20日 周一 外滩</div>
+    <div class="trip-sub">外滩老城厢 · 必去 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-20')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🌉</div><div class="step-content"><div class="step-title">外滩万国建筑群 · 9:00~11:00</div><div class="step-desc">沿黄浦江散步，欣赏52幢历史建筑，对岸陆家嘴三件套。约1.5公里平路，有椅子可休息。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2/10号线→南京东路站，步行10分钟</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费</p>
+<p>⏰ <strong>开放：</strong>全天开放（灯光约20:00~23:00）</p>
+</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-sun">不宜暴晒</span><span class="wtag wtag-rain">不宜雨天</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=外滩&city=上海" target="_blank">导航到外滩</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">南京东路上的「王宝和酒家」（本帮菜），或绿波廊（豫园内，百年老字号）。人均80~150元。</div></div></div><div class="tip"><p>外滩路面开阔无遮阴，必须做防晒！</p><p>不要在正午(12:00~15:00)久留</p><p>夜景很美，若体力好傍晚可再去</p></div></div></div>
+<div class="trip-day" data-date="7-21" data-default-spot="yuyuan" data-current-spot="yuyuan">
+<div class="trip-hd area-b" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🏮 7月21日 周二 豫园·城隍庙</div>
+    <div class="trip-sub">外滩老城厢 · 必去 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-21')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🏮</div><div class="step-content"><div class="step-title">豫园游览 · 9:00~11:30</div><div class="step-desc">460年历史的江南园林，假山、亭台、荷花池。园内有遮阴，适合外公外婆。园内路线较复杂，建议跟紧不走散。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>14号线→豫园站7号口，步行3分钟</p>
+<p>🎫 <strong>门票：</strong>豫园旺季40元/人</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上半价 = 20元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1.3m以下免费，1.3~1.5m半价20元；1.6m以上凭学生证可购学生票约20元</p>
+<p>⏰ <strong>开放：</strong>豫园8:30~17:00（16:30停止入园）；城隍庙全天</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信搜索「豫园」公众号或美团/大众点评网上购票，到现场扫二维码入园，免排队</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-rain">不宜雨天</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=豫园&city=上海" target="_blank">导航到豫园</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">城隍庙小吃午餐：必试南翔小笼包、生煎包、梨膏糖、赤豆糕、排骨年糕。外公外婆和曲曲都爱！人均40~80元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">城隍庙商城 · 13:30~14:30</div><div class="step-desc">室内空调，老字号特产，可买土特产、伴手礼。有座椅可休息。</div></div></div><div class="tip"><p>暑假旺季人非常多，强烈建议提前购票</p><p>豫园和城隍庙本来就是一体，放在一起逛最顺</p></div></div></div>
+<div class="trip-day" data-date="7-22" data-default-spot="lujiazui" data-current-spot="lujiazui">
+<div class="trip-hd area-d" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🌊 7月22日 周三 陆家嘴·滨江·东方明珠</div>
+    <div class="trip-sub">陆家嘴 · 推荐 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-22')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🌊</div><div class="step-content"><div class="step-title">滨江大道漫步 · 9:00~10:30</div><div class="step-desc">沿江步道，对岸外滩建筑群，视野极佳。有遮阴座椅，可休息。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">东方明珠（可选登高） · 10:30~12:00</div><div class="step-desc">想登高看全景可购票。不想花钱在外面拍照也非常好看。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2号线→陆家嘴站；或从外滩坐轮渡过江（约2元）</p>
+<p>🎫 <strong>门票：</strong>滨江免费；东方明珠180~258元</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上约149元起</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1m以下免费，1~1.4m约140元；1.6m以上凭学生证可购学生票约99元</p>
+<p>⏰ <strong>开放：</strong>滨江全天；东方明珠8:00~21:30</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信「东方明珠」公众号在线购票，选「城市之光一日票」149元/成人最划算。</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-sun">不宜暴晒</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=陆家嘴滨江大道&city=上海" target="_blank">导航到陆家嘴</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">正大广场B2层美食广场，选择多、有空调。人均40~80元。</div></div></div><div class="tip"><p>从外滩坐轮渡过江只要2元，体验超好！</p><p>陆家嘴几个景点连在一起，可自由组合</p></div></div></div>
+<div class="trip-day" data-date="7-23" data-default-spot="aquarium" data-current-spot="aquarium">
+<div class="trip-hd area-d" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🐠 7月23日 周四 上海海洋水族馆</div>
+    <div class="trip-sub">陆家嘴 · 推荐 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-23')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🐠</div><div class="step-content"><div class="step-title">海洋水族馆 · 9:00~12:00</div><div class="step-desc">亚洲最大海洋水族馆之一，155米海底隧道，鲨鱼、海龟从头顶游过。全程室内空调，外公外婆和曲曲都能轻松游览。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2号线→陆家嘴站，步行约5分钟</p>
+<p>🎫 <strong>门票：</strong>160元/人</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上半价 = 80元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1m以下免费，1~1.4m儿童票110元；1.6m以上凭学生证可购学生票约110元</p>
+<p>⏰ <strong>开放：</strong>9:00~18:00（17:30停止售票）</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>美团/大众点评网上购票有优惠（约135元/成人），到现场扫码。外公外婆和曲曲优惠票建议现场窗口购买。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海海洋水族馆&city=上海" target="_blank">导航到上海海洋水族馆</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">正大广场美食层。人均40~80元。</div></div></div><div class="tip"><p>曲曲特别喜欢的景点</p><p>若体力好，下午可继续逛陆家嘴其他景点</p></div></div></div>
+<div class="trip-day" data-date="7-24" data-default-spot="tech" data-current-spot="tech">
+<div class="trip-hd area-d" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🔬 7月24日 周五 上海科技馆</div>
+    <div class="trip-sub">陆家嘴 · 推荐 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-24')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🔬</div><div class="step-content"><div class="step-title">上海科技馆 · 9:30~15:00</div><div class="step-desc">大型科技体验馆，机器人、太空、生物、地震模拟。互动项目多，曲曲可以玩大半天。室内空调，有餐厅可午餐。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2号线→上海科技馆站，出站即达</p>
+<p>🎫 <strong>门票：</strong>45元/人</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上半价 = 22元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1.3m以下免费；1.6m以上凭学生证可购学生票约22元</p>
+<p>⏰ <strong>开放：</strong>9:00~17:15（周一闭馆）</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信「上海科技馆」公众号或美团网上购票（约40元/成人）。外公外婆优惠票现场窗口出示身份证。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海科技馆&city=上海" target="_blank">导航到上海科技馆</a><div class="tip"><p>科技馆非常大，建议重点看：1楼机器人剧场、2楼生物万象、4楼太空探索</p><p>体力不够不用看完，挑感兴趣的</p></div></div></div>
+<div class="trip-day" data-date="7-25" data-default-spot="family2" data-current-spot="family2">
+<div class="trip-hd area-a" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🎉 7月25日 周六 亲友欢聚日②</div>
+    <div class="trip-sub">徐汇周边 · 推荐 · 室内 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-25')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🎉</div><div class="step-content"><div class="step-title">亲友欢聚 · 灵活</div><div class="step-desc">可根据实际情况选择：① 约亲友在民宿附近聚餐 ② 带亲友一起去还没去的景点 ③ 在新天地、淮海路等地方逛街拍照</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>视安排而定</p>
+<p>🎫 <strong>门票：</strong>视安排而定</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">视安排而定</span></p>
+<p>👦 <strong>曲曲优惠：</strong>视安排而定</p>
+<p>⏰ <strong>开放：</strong>灵活</p>
+</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span><span class="wtag wtag-outdoor">户外</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=新天地&city=上海" target="_blank">导航到亲友欢聚日②</a><div class="tip"><p>建议提前一天和亲友确认</p><p>可点击上方编辑按钮调整具体安排</p></div></div></div>
+<div class="trip-day" data-date="7-26" data-default-spot="museum" data-current-spot="museum">
+<div class="trip-hd area-c" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🏛️ 7月26日 周日 上海博物馆</div>
+    <div class="trip-sub">人民广场 · 必去 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-26')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🏛️</div><div class="step-content"><div class="step-title">上海博物馆 · 9:00~12:00</div><div class="step-desc">12万余件文物，青铜器、陶瓷、书法、绘画等。全程室内空调，有座椅，7月最舒适的选择！曲曲能学到很多历史知识。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2号线→人民广场站，步行5分钟</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费（需预约）</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费（需预约）</p>
+<p>⏰ <strong>开放：</strong>9:00~17:00（16:00停止入馆），周一闭馆</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信公众号「上海博物馆」→参观预约→选日期→预约成功刷身份证入馆。提前3~7天。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海博物馆&city=上海" target="_blank">导航到上海博物馆</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">人民广场附近「兰心餐厅」（本帮菜），或进商场（来福士广场）餐饮层。人均50~100元。</div></div></div><div class="tip"><p>下午若精力允许，可顺路参观上海城市规划展示馆（步行3分钟）</p><p>两个馆都是室内空调，夏天最舒服的安排</p></div><div class="warn" style="background:#fff3e0;border-left:4px solid #ff9800;color:#e65100">⚠️ 该景点周末人流量大，建议尽早出门（9:00前到达）以避开高峰，或考虑换到工作日前往。</div></div></div>
+<div class="trip-day" data-date="7-27" data-default-spot="jingan" data-current-spot="jingan">
+<div class="trip-hd area-e" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🛕 7月27日 周一 静安寺·南京西路</div>
+    <div class="trip-sub">静安·新天地 · 推荐 · 户外 · 有遮阴</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-27')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🛕</div><div class="step-content"><div class="step-title">静安寺 · 9:00~11:00</div><div class="step-desc">1700年历史古刹，闹中取静。外公外婆礼佛祈福，寺内有空调休息处。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2/7号线→静安寺站，出站即见</p>
+<p>🎫 <strong>门票：</strong>静安寺50元（含香火）</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">无额外优惠</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1.2m以下免费；寺庙一般无学生优惠，1.6m以上需全价50元</p>
+<p>⏰ <strong>开放：</strong>静安寺7:30~17:00；商圈约10:00~22:00</p>
+</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-rain">不宜雨天</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=静安寺&city=上海" target="_blank">导航到静安寺</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">久光百货美食层（正大级品质），或南京西路「光明邨大酒家」（本帮菜老字号）。人均60~120元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">南京西路逛街 · 14:00~16:00</div><div class="step-desc">上海最繁华商业街之一，恒隆广场、嘉里中心等商场，室内空调。</div></div></div><div class="tip"><p>静安寺和南京西路连在一起，逛完寺庙直接逛街最顺</p><p>商场里可随时休息避暑</p></div></div></div>
+<div class="trip-day" data-date="7-28" data-default-spot="xintiandi" data-current-spot="xintiandi">
+<div class="trip-hd area-e" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🏘️ 7月28日 周二 新天地·思南路</div>
+    <div class="trip-sub">静安·新天地 · 推荐 · 户外 · 有遮阴</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-28')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🏘️</div><div class="step-content"><div class="step-title">新天地 · 9:30~12:00</div><div class="step-desc">石库门改建的时尚街区，青砖老墙+精品小店。悠闲漫步，适合拍照。室内有空调休息区。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>1/10/13号线→新天地站；或步行约25分钟</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费</p>
+<p>⏰ <strong>开放：</strong>全天（餐厅约10:00~22:00）</p>
+</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-rain">不宜雨天</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=新天地&city=上海" target="_blank">导航到新天地</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">鼎泰丰小笼包（新天地店）、老吉士酒家（本帮菜）。人均60~120元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">思南路·老洋房漫步 · 14:00~16:00</div><div class="step-desc">从新天地步行约10分钟到思南路，两侧老洋房林立，法租界风情，比武康路更安静优雅。适合外公外婆悠闲散步、拍照。沿途咖啡馆可随时休息。</div></div></div><div class="tip"><p>新天地热闹+思南路安静，一动一静搭配最完美</p><p>下午最热时段在思南路咖啡馆坐坐</p></div></div></div>
+<div class="trip-day" data-date="7-29" data-default-spot="shanghaiCenter" data-current-spot="shanghaiCenter">
+<div class="trip-hd area-d" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🏙️ 7月29日 周三 上海中心·上海之巅</div>
+    <div class="trip-sub">陆家嘴 · 推荐 · 室内</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-29')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🏙️</div><div class="step-content"><div class="step-title">上海中心大厦·上海之巅 · 9:30~12:00</div><div class="step-desc">中国第一高楼632米，118层观光厅俯瞰上海全景。晴朗天气视野极佳，曲曲会特别喜欢！全程室内空调，电梯仅需55秒直达。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>2号线→陆家嘴站，步行约8分钟</p>
+<p>🎫 <strong>门票：</strong>180元/人</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">60岁以上约120元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>1m以下免费，1~1.4m儿童票120元；1.6m以上凭学生证可购学生票约120元</p>
+<p>⏰ <strong>开放：</strong>8:30~22:00</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>微信「上海中心大厦上海之巅」公众号在线购票。外公外婆优惠票现场窗口出示身份证。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海中心大厦&city=上海" target="_blank">导航到上海中心</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">上海中心内餐厅，或正大广场。人均50~120元。</div></div></div><div class="tip"><p>晴天视野最佳</p><p>若前一天已逛陆家嘴其他景点，可专注上海中心</p></div></div></div>
+<div class="trip-day" data-date="7-30" data-default-spot="filmMuseum" data-current-spot="filmMuseum">
+<div class="trip-hd area-a" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🎬 7月30日 周四 电影博物馆·徐家汇</div>
+    <div class="trip-sub">徐汇周边 · 可选 · 室内 · 户外</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-30')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🎬</div><div class="step-content"><div class="step-title">上海电影博物馆 · 9:30~11:30</div><div class="step-desc">展示中国电影百年历史，有互动体验区。距民宿较近，室内空调，轻松不累。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>电影博物馆：9号线→打浦桥站；天主堂：1/9/11号线→徐家汇站</p>
+<p>🎫 <strong>门票：</strong>电影博物馆60元；天主堂免费（登楼10元）；公园免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">电影博物馆60岁以上半价=30元</span></p>
+<p>👦 <strong>曲曲优惠：</strong>电影博物馆1.3m以下免费；1.6m以上凭学生证可购学生票约30元；天主堂免费</p>
+<p>⏰ <strong>开放：</strong>电影博物馆9:00~17:00（周一闭馆）；天主堂周二~周日9:00~16:00</p>
+</div><div class="reserve-box">📌 <strong>预约/购票攻略：</strong>美团/大众点评网上购票，到现场扫码入园。建议提前1天。</div><div class="badge-row"><span class="wtag wtag-indoor">室内</span><span class="wtag wtag-outdoor">户外</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=上海电影博物馆&city=上海" target="_blank">导航到电影博物馆</a><div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐</div><div class="step-desc">徐家汇商圈餐厅（港汇恒隆、美罗城）。人均50~100元。</div></div></div><div class="step"><div class="step-ico">📍</div><div class="step-content"><div class="step-title">徐家汇天主堂·徐家汇公园 · 13:30~15:30</div><div class="step-desc">上海最大天主教堂，哥特式建筑，非常壮观（免费参观，登楼10元）。旁边徐家汇公园有黑天鹅湖，适合散步休息。</div></div></div><div class="tip"><p>电影博物馆和天主堂都在徐汇，距离民宿近</p><p>室内+户外搭配，夏天最舒服</p><p>最后一天在徐汇收尾，轻松回家</p></div></div></div>
+<div class="trip-day" data-date="7-31" data-default-spot="suzhouRiver" data-current-spot="suzhouRiver">
+<div class="trip-hd area-e" onclick="tog(this)">
+  <div style="flex:1">
+    <div class="trip-title">🌊 7月31日 周五 苏州河沿岸</div>
+    <div class="trip-sub">静安·新天地 · 可选 · 户外 · 有遮阴</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="edit-btn" onclick="event.stopPropagation();openEditModal('7-31')" title="更换景点">✏️</button>
+    <div class="trip-arr">▼</div>
+  </div>
+</div>
+<div class="trip-body"><div class="step"><div class="step-ico">🌊</div><div class="step-content"><div class="step-title">苏州河漫步 · 9:30~11:30</div><div class="step-desc">苏州河两岸整治一新，绿树成荫，有艺术馆和咖啡馆。步道平整，外公外婆可慢慢走。建议上午或傍晚去，避开中午暴晒。</div></div></div><div class="info-b">
+<p>🚇 <strong>交通：</strong>1号线→上海火车站附近，或3/4号线→中潭路站</p>
+<p>🎫 <strong>门票：</strong>免费</p>
+<p>👴 <strong>外公外婆优惠：</strong><span style="font-size:19px;font-weight:700;color:#27500A;background:#EAF3DE;padding:4px 10px;border-radius:6px">免费</span></p>
+<p>👦 <strong>曲曲优惠：</strong>免费</p>
+<p>⏰ <strong>开放：</strong>全天</p>
+</div><div class="badge-row"><span class="wtag wtag-outdoor">户外</span><span class="wtag wtag-sun">不宜暴晒</span><span class="wtag wtag-rain">不宜雨天</span></div><a class="map-btn" href="https://uri.amap.com/search?keyword=苏州河步道&city=上海" target="_blank">导航到苏州河沿岸</a><div class="tip"><p>若当天太热或下雨，可改为室内景点</p><p>可顺路看看四行仓库抗战纪念馆（免费）</p></div></div></div>
+<div class="trip-day" data-date="8-1" data-default-spot="" data-current-spot="">
+<div class="trip-hd" onclick="tog(this)"><div><div class="trip-title">✈️ 8月1日 周六 离沪</div><div class="trip-sub">回程 · 检查行李</div></div><div class="trip-arr">▼</div></div>
+<div class="trip-body">
+<div class="step"><div class="step-ico">🧳</div><div class="step-content"><div class="step-title">整理行李，检查物品</div><div class="step-desc">确认身份证、车票/机票、手机、充电器、药物等。不要遗漏在民宿。</div></div></div>
+<div class="step"><div class="step-ico">🍜</div><div class="step-content"><div class="step-title">午餐 · 附近解决</div><div class="step-desc">永康路或嘉善路附近餐厅，简单吃一顿。</div></div></div>
+<div class="info-b">
+<p>🚇 <strong>虹桥机场/高铁：</strong>地铁2/10号线→虹桥火车站，建议提前2.5~3小时出发</p>
+<p>🚇 <strong>浦东机场：</strong>地铁2号线或机场大巴，建议提前3小时出发</p>
+</div>
+<div class="warn">提前确认车次/航班时间，预留充足时间！</div>
+</div></div>
+</div>
+
+
+<!-- ===== SPOTS ===== -->
+<div id="page-spots" class="page">
+<div class="card" style="background:#e3f2fd;border:none">
+<p style="font-size:17px;color:#1565c0">按推荐优先级排序。点「已去过」划掉该景点，选天气可筛选适合的景点。数据自动保存，下次打开还在。</p>
+</div>
+
+<div class="filter-bar" id="filterBar">
+<button class="filter-btn active" onclick="filterSpots('all',this)">全部景点</button>
+<button class="filter-btn" onclick="filterSpots('indoor',this)">🌧️ 下雨天（室内）</button>
+<button class="filter-btn" onclick="filterSpots('sunny',this)">☀️ 晴天（全天可去）</button>
+<button class="filter-btn" onclick="filterSpots('cool',this)">🌡️ 高温天（室内+遮阴）</button>
+</div>
+
+<div style="text-align:right;margin-bottom:10px">
+<button class="reset-btn" onclick="resetAll()">清除所有「已去过」标记和日程调整</button>
+</div>
+
+<div id="spotList"></div>
+</div>
+
+<!-- ===== FOOD ===== -->
+<div id="page-food" class="page">
+<div class="card">
+<div class="card-t"><span class="ico">🍜</span>上海必吃特色美食</div>
+<div class="badge-row" style="margin-bottom:16px">
+<span class="badge">小笼包</span>
+<span class="badge">生煎馒头</span>
+<span class="badge">红烧肉</span>
+<span class="badge">葱油拌面</span>
+<span class="badge">蟹壳黄</span>
+<span class="badge">梨膏糖</span>
+<span class="badge">排骨年糕</span>
+<span class="badge">鲜肉月饼</span>
+<span class="badge">擂沙圆</span>
+<span class="badge">八宝饭</span>
+</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥇 绿波廊</div>
+<div class="food-desc">豫园内百年老字号，上海本帮菜代表，环境优雅。招牌：桂花拉糕、眉毛酥、蟹粉小笼。</div>
+<div class="food-addr">📍 豫园内 · 14号线豫园站 · 人均80~150元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥇 南翔馒头店（城隍庙老店）</div>
+<div class="food-desc">百年小笼包，皮薄汁多馅大，上海必吃！暑假排队较长，建议上午10点前去。</div>
+<div class="food-addr">📍 城隍庙内 · 人均40~80元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥇 光明邨大酒家</div>
+<div class="food-desc">淮海路老字号，红烧肉、走油蹄膀、油爆虾是招牌。午餐晚餐都适合外公外婆。</div>
+<div class="food-addr">📍 淮海路（距民宿步行约20分钟）· 人均80~120元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥇 沈大成</div>
+<div class="food-desc">南京东路老字号，各类点心（条头糕、粢饭糕、汤团、双酿团）。早餐和下午茶首选。</div>
+<div class="food-addr">📍 南京东路步行街 · 人均20~40元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥈 鼎泰丰</div>
+<div class="food-desc">台湾小笼包品牌，品质稳定，环境干净卫生，适合外公外婆和曲曲。小笼包、虾仁烧卖最热门。</div>
+<div class="food-addr">📍 新天地店 · 1/10/13号线新天地站 · 人均60~100元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥈 老吉士酒家</div>
+<div class="food-desc">本帮菜小馆，葱烤鲫鱼、油爆虾、酱鸭。味道地道，价格亲民。</div>
+<div class="food-addr">📍 新天地附近 · 人均60~100元</div>
+</div>
+
+<div class="food-card">
+<div class="food-name">🥈 王宝和酒家</div>
+<div class="food-desc">以蟹闻名（7月非蟹季），但本帮海鲜菜肴也很出色。环境正式，适合一顿好饭。</div>
+<div class="food-addr">📍 南京东路附近 · 人均100~180元</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🏪</span>民宿附近日常吃饭（步行可达）</div>
+<div class="info-b">
+<p>🍜 <strong>永康路：</strong>沿街小馆聚集，早餐、午餐、下午茶均有，氛围休闲，步行5分钟</p>
+<p>🍜 <strong>嘉善路：</strong>便民餐厅多家，价格实惠，适合不想出远门时解决三餐，步行5分钟</p>
+<p>🛒 <strong>淮海中路：</strong>步行约10分钟，大型商场（iapm、百盛），餐饮楼层选择丰富</p>
+<p>🏪 <strong>便利店：</strong>全家、7-Eleven、罗森步行5分钟内多家，24小时营业。可买早餐、饮料、便当</p>
+<p>🛒 <strong>超市：</strong>家乐福肇嘉浜路店步行约10分钟，买菜、零食、日用品</p>
+</div>
+<div class="tip">7月高温，尽量避免路边摊生冷食品，选择有空调的正规餐厅用餐更安全。</div>
+</div>
+</div>
+
+<!-- ===== TRANS ===== -->
+<div id="page-trans" class="page">
+<div class="card">
+<div class="card-t"><span class="ico">🚇</span>从民宿出发的地铁指引</div>
+<div class="info-b">
+<p>🏠 <strong>民宿最近地铁站：</strong></p>
+<p>• <strong>陕西南路站</strong>（1号线/10号线/12号线）— 步行约400米，约5分钟 ⭐线路最多</p>
+<p>• <strong>嘉善路站</strong>（9号线/12号线）— 步行约350米，约4分钟 ⭐最近</p>
+<p>• <strong>打浦桥站</strong>（9号线/13号线）— 步行约800米，约10分钟</p>
+<p>• <strong>大木桥路站</strong>（4号线/12号线）— 步行约1公里，约12分钟</p>
+</div>
+<div class="tip">外公外婆乘地铁可走<strong>无障碍通道</strong>（问工作人员），可优先坐<strong>蓝色优先座位</strong>。进站用支付宝/微信扫码即可，无需买票。</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🚌</span>民宿附近公交车站</div>
+<div class="info-b">
+<p>🏠 <strong>民宿最近公交站：</strong></p>
+<p>• <strong>嘉善路建国中路站</strong>（复兴中路/嘉善路路口）— 步行约150米，约2分钟 ⭐最近</p>
+<p>&nbsp;&nbsp;&nbsp;途经线路：<strong>24路</strong>（往外滩方向）、<strong>41路</strong>（往龙华方向）、<strong>104路</strong>（往静安寺方向）、<strong>146路</strong>（人民广场方向）</p>
+<p>• <strong>陕西南路建国西路站</strong>（陕西南路/建国西路路口）— 步行约300米，约4分钟</p>
+<p>&nbsp;&nbsp;&nbsp;途经线路：<strong>42路</strong>（往上海火车站方向）、<strong>45路</strong>（往田林方向）、<strong>327路</strong>（夜间线）</p>
+<p>• <strong>襄阳南路复兴中路站</strong>（襄阳南路/复兴中路路口）— 步行约250米，约3分钟</p>
+<p>&nbsp;&nbsp;&nbsp;途经线路：<strong>36路</strong>（往龙阳路方向）、<strong>986路</strong>（往浦东方向）</p>
+<p>• <strong>打浦桥站（公交）</strong>（瑞金南路/打浦路路口）— 步行约600米，约8分钟</p>
+<p>&nbsp;&nbsp;&nbsp;途经线路：<strong>43路</strong>、<strong>96路</strong>、<strong>218路</strong>、<strong>806路</strong>等多条线路</p>
+</div>
+<div class="tip">公交可用<strong>支付宝/微信</strong>扫码支付，或使用<strong>上海交通卡</strong>。外公外婆上下车注意台阶，建议从后门下车更宽敞。高温天等车时可到附近店面避暑。</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🗺️</span>各地铁路线</div>
+<div class="list-item">
+<div class="list-num" style="background:#185FA5">B</div>
+<div class="list-content"><div class="list-name">到 外滩/南京路</div><div class="list-desc">9号线嘉善路→打浦桥→换乘13号线→世纪大道→换乘2号线→南京东路站（约40分钟），出站步行10分钟</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#185FA5">B</div>
+<div class="list-content"><div class="list-name">到 豫园/城隍庙</div><div class="list-desc">9号线→打浦桥→换乘13号线→换乘14号线→豫园站（约35分钟），出站步行3分钟</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#534AB7">C</div>
+<div class="list-content"><div class="list-name">到 上海博物馆/城市规划馆</div><div class="list-desc">9号线→换乘2号线→人民广场站（约35分钟），步行5分钟</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#534AB7">C</div>
+<div class="list-content"><div class="list-name">到 自然博物馆</div><div class="list-desc">9号线→换乘13号线→自然博物馆站（约25分钟），出站即达</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#D85A30">D</div>
+<div class="list-content"><div class="list-name">到 陆家嘴/东方明珠</div><div class="list-desc">9号线→换乘2号线→陆家嘴站（约35分钟），出站步行5分钟。或从外滩坐轮渡过江（2元）</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#D85A30">D</div>
+<div class="list-content"><div class="list-name">到 上海科技馆</div><div class="list-desc">9号线→换乘2号线→上海科技馆站（约40分钟），出站即达</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#993C1D">E</div>
+<div class="list-content"><div class="list-name">到 静安寺</div><div class="list-desc">9号线→换乘2号线→静安寺站（约45分钟），出站即见</div></div>
+</div>
+<div class="list-item">
+<div class="list-num" style="background:#993C1D">E</div>
+<div class="list-content"><div class="list-name">到 新天地</div><div class="list-desc">步行约25分钟，或打车约10分钟（约13元）。地铁：9号线→打浦桥→换乘13号线→新天地站（约20分钟）</div></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🚕</span>打车参考费用</div>
+<div class="info-b">
+<p>💰 民宿→外滩：约25~35元，车程25分钟</p>
+<p>💰 民宿→豫园：约20~28元，车程20分钟</p>
+<p>💰 民宿→陆家嘴：约35~50元，车程30分钟</p>
+<p>💰 民宿→上海博物馆：约25~35元，车程25分钟</p>
+<p>💰 民宿→静安寺：约20~30元，车程20分钟</p>
+<p>💰 民宿→新天地：约13~18元，车程10分钟</p>
+</div>
+<div class="tip">打车App推荐：<strong>滴滴出行</strong>、<strong>高德地图叫车</strong>。将民宿地址截图给司机看最方便。</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🚌</span>其他交通方式</div>
+<div class="info-b">
+<p>🚌 <strong>公交：</strong>上海公交网络密集，但线路复杂。外公外婆不熟悉建议首选地铁或打车</p>
+<p>🚢 <strong>黄浦江轮渡：</strong>外滩→陆家嘴，约2元/人，体验很好！也是一个有趣的小游览</p>
+</div>
+</div>
+</div>
+
+<!-- ===== TIPS ===== -->
+<div id="page-tips" class="page">
+<div class="card">
+<div class="card-t"><span class="ico">🌡️</span>防暑降温（最重要！）</div>
+<div class="warn">7月上海持续高温 36~40°C，外公外婆中暑风险高！</div>
+<div class="list-item"><div class="list-num" style="background:#e53935">1</div><div class="list-content"><div class="list-name">避开午间</div><div class="list-desc">12:00~16:00最热，必须在室内休息（民宿/商场/博物馆），不要坚持外出</div></div></div>
+<div class="list-item"><div class="list-num" style="background:#e53935">2</div><div class="list-content"><div class="list-name">必备防暑物品</div><div class="list-desc">防晒霜SPF50+（每2小时补一次）、遮阳帽、遮阳伞、冷感毛巾、随身水</div></div></div>
+<div class="list-item"><div class="list-num" style="background:#e53935">3</div><div class="list-content"><div class="list-name">中暑应对</div><div class="list-desc">出现头晕、恶心、出虚汗 → 立刻到阴凉处 → 喝藿香正气水 → 冷水擦额头颈部 → 严重拨打 <strong style="color:#c62828;font-size:20px">120</strong></div></div></div>
+<div class="list-item"><div class="list-num" style="background:#e53935">4</div><div class="list-content"><div class="list-name">补水</div><div class="list-desc">每人每天至少1.5~2升水，出汗多时补充电解质饮料（便利店有售）</div></div></div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">❤️</span>外公外婆出行健康提醒</div>
+<div class="info-b">
+<p>💊 <strong>常备药物：</strong>自带常用药（高血压、心脏病等），备好藿香正气水、创可贴、止泻药</p>
+<p>👟 <strong>鞋子：</strong>穿平底防滑运动鞋，不要穿拖鞋逛景点</p>
+<p>🪑 <strong>适时休息：</strong>每走30~45分钟找地方坐下休息5~10分钟</p>
+<p>📱 <strong>手机电量：</strong>保持充足，随身带充电宝</p>
+<p>🆔 <strong>随身携带：</strong>身份证、民宿地址卡片</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🌧️</span>雨天应对</div>
+<div class="info-b">
+<p>• 7月上海会突发雷阵雨，出门带折叠伞</p>
+<p>• 雨天优先选 <strong>室内景点</strong>（博物馆、水族馆、科技馆）</p>
+<p>• 下雨时地铁最方便，不受天气影响</p>
+<p>• 在「景点库」页面点 <strong>「下雨天（室内）」</strong> 筛选按钮即可看到所有适合的</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">🔒</span>安全与财物</div>
+<div class="info-b">
+<p>• 人流密集处（外滩、南京路、城隍庙）注意贴身保管手机和钱包</p>
+<p>• 用小挎包/斜挎包，钱包放前面，方便看护</p>
+<p>• 出行前告知家人每天大致行程</p>
+<p>• 民宿钥匙至少保管2把，外公外婆和曲曲各一把</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-t"><span class="ico">📱</span>手机必备App</div>
+<div class="badge-row">
+<span class="badge">高德地图（导航）</span>
+<span class="badge">微信支付（付款）</span>
+<span class="badge">支付宝（付款/乘车码）</span>
+<span class="badge">滴滴出行（打车）</span>
+<span class="badge">美团/大众点评（买票/订餐）</span>
+</div>
+<div class="tip">微信/支付宝几乎覆盖所有消费场景，带少量现金200~300元备用即可。</div>
+</div>
+</div>
+
+<!-- ===== EMERGENCY ===== -->
+<div id="page-emer" class="page">
+<div style="background:#ffebee;border-radius:16px;padding:24px;text-align:center;margin-bottom:20px">
+<p style="font-size:20px;font-weight:700;color:#c62828">紧急救助电话</p>
+<p style="font-size:42px;font-weight:700;color:#c62828;margin:10px 0">120</p>
+<p style="font-size:18px;color:#b71c1c">急救 / 中暑 / 突发疾病</p>
+<div style="display:flex;justify-content:center;gap:30px;margin-top:14px">
+<div style="text-align:center"><p style="font-size:26px;font-weight:700;color:#1565c0">110</p><p style="font-size:15px;color:#555">报警</p></div>
+<div style="text-align:center"><p style="font-size:26px;font-weight:700;color:#e65100">119</p><p style="font-size:15px;color:#555">火警</p></div>
+</div>
+</div>
+
+<div class="emer-card">
+<div class="emer-title">🏠 民宿信息</div>
+<div class="emer-item"><span class="emer-label">地址</span><span class="emer-val">上海市徐汇区永盛里嘉善路101弄46号一楼前门101室</span></div>
+<div class="emer-item"><span class="emer-label">附近地铁</span><span class="emer-val">1/10/12号线陕西南路站（约400米）· 9/12号线嘉善路站（约350米）· 9/13号线打浦桥站（约800米）· 4/12号线大木桥路站（约1公里）</span></div>
+</div>
+
+<div class="emer-card">
+<div class="emer-title">🏥 附近医院</div>
+<div class="emer-item"><span class="emer-label">最近三甲</span><span class="emer-val">上海交通大学附属第六人民医院<br>徐汇区宜山路600号 · 24小时急诊<br><a class="map-btn" href="https://uri.amap.com/search?keyword=上海第六人民医院&city=上海" target="_blank">导航</a></span></div>
+<div class="emer-item"><span class="emer-label">综合医院</span><span class="emer-val">徐汇区中心医院<br>中山西路966号 · 24小时急诊<br><a class="map-btn" href="https://uri.amap.com/search?keyword=徐汇区中心医院&city=上海" target="_blank">导航</a></span></div>
+<div class="emer-item"><span class="emer-label">儿童医院</span><span class="emer-val">复旦大学附属儿科医院<br>万源路399号（闵行区）<br><a class="map-btn" href="https://uri.amap.com/search?keyword=复旦大学附属儿科医院&city=上海" target="_blank">导航</a></span></div>
+</div>
+
+<div class="emer-card">
+<div class="emer-title">💊 附近药店</div>
+<div class="emer-item"><span class="emer-label">连锁药店</span><span class="emer-val">嘉善路、淮海路附近均有国大药房、老百姓大药房，步行5~10分钟</span></div>
+<div class="emer-item"><span class="emer-label">建议自带</span><span class="emer-val">藿香正气水（防暑）、感冒药、止泻药、创可贴、降压药、心脏病药（如有）</span></div>
+</div>
+
+<div class="emer-card">
+<div class="emer-title">🛒 附近超市/便利店</div>
+<div class="emer-item"><span class="emer-label">大超市</span><span class="emer-val">家乐福肇嘉浜路店（步行约10分钟）</span></div>
+<div class="emer-item"><span class="emer-label">便利店</span><span class="emer-val">全家、7-Eleven、罗森，步行5分钟内多家，24小时营业</span></div>
+</div>
+
+<div class="emer-card">
+<div class="emer-title">🚄 回程提示（8月1日）</div>
+<div class="emer-item"><span class="emer-label">虹桥机场/高铁</span><span class="emer-val">地铁2/10号线→虹桥火车站<br><strong>建议提前2.5~3小时出发</strong></span></div>
+<div class="emer-item"><span class="emer-label">浦东机场</span><span class="emer-val">地铁2号线或机场大巴<br><strong>建议提前3小时出发</strong></span></div>
+</div>
+
+<div class="card" style="background:#f1f8e9;border:none;text-align:center">
+<p style="font-size:20px;color:#2e7d32">祝外公外婆和曲曲上海之旅愉快！<br>玩得开心，吃得好，平平安安！</p>
+</div>
+</div>
+
+<!-- ===== Edit Modal ===== -->
+<div id="editModal" class="edit-modal">
+<div class="edit-modal-content">
+<button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+<div class="edit-modal-title">✏️ 更换当天景点</div>
+<p style="font-size:15px;color:#888;margin-bottom:12px">已去过或已安排的景点不会显示</p>
+<div id="editSpotList"></div>
+</div>
+</div>
+
+<script>
+// ============ 景点数据 ============
+const spotsData = [
+  {
+    "id": "bund",
+    "name": "外滩",
+    "icon": "🌉",
+    "shortName": "外滩",
+    "area": "B",
+    "areaName": "外滩老城厢",
+    "priority": 1,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "no-rain"
+    ],
+    "bg": "bg-b",
+    "desc": "上海最具代表性的地标，沿黄浦江约1.5公里，52幢欧式万国建筑群，对岸是现代化的陆家嘴三件套。上海必到之处。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天开放（灯光约20:00~23:00）",
+    "subway": "2/10号线→南京东路站，步行10分钟",
+    "tips": [
+      "路面开阔无遮阴，必须防晒",
+      "建议早晨去或傍晚看夜景",
+      "正午不要久留"
+    ],
+    "food": [
+      "绿波廊（本帮菜）",
+      "王宝和酒家（海鲜）"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=外滩&city=上海"
+  },
+  {
+    "id": "yuyuan",
+    "name": "豫园·城隍庙",
+    "icon": "🏮",
+    "shortName": "豫园",
+    "area": "B",
+    "areaName": "外滩老城厢",
+    "priority": 1,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-rain"
+    ],
+    "bg": "bg-b",
+    "desc": "明代古典园林豫园+城隍庙商圈组合。460年历史的江南园林，加上传统小吃和特产购物。",
+    "ticket": "豫园旺季40元/人",
+    "reserve": true,
+    "elder": "60岁以上半价 = 20元",
+    "child": "1.3m以下免费，1.3~1.5m半价20元；1.6m以上凭学生证可购学生票约20元",
+    "hours": "豫园8:30~17:00（16:30停止入园）；城隍庙全天",
+    "subway": "14号线→豫园站7号口，步行3分钟",
+    "tips": [
+      "暑假人多务必提前网上购票",
+      "园内路线复杂，建议跟紧",
+      "穿防滑平底鞋"
+    ],
+    "food": [
+      "南翔馒头店（城隍庙内）",
+      "绿波廊（豫园内）",
+      "梨膏糖",
+      "生煎包"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=豫园&city=上海",
+    "reserveInfo": "微信搜索「豫园」公众号或美团/大众点评网上购票，到现场扫二维码入园，免排队"
+  },
+  {
+    "id": "museum",
+    "name": "上海博物馆",
+    "icon": "🏛️",
+    "shortName": "上博",
+    "area": "C",
+    "areaName": "人民广场",
+    "priority": 1,
+    "crowded": true,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-c",
+    "desc": "中国最优秀博物馆之一，馆藏12万余件文物，青铜器、陶瓷、书法、绘画等。全程室内空调，7月最舒适！",
+    "ticket": "免费",
+    "reserve": true,
+    "elder": "免费（需预约）",
+    "child": "免费（需预约）",
+    "hours": "9:00~17:00（16:00停止入馆），周一闭馆",
+    "subway": "2号线→人民广场站，步行5分钟",
+    "tips": [
+      "必须提前网上预约！名额有限",
+      "建议预留3小时参观",
+      "馆内有存包处"
+    ],
+    "food": [
+      "兰心餐厅（人民广场附近）",
+      "来福士广场餐饮层"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海博物馆&city=上海",
+    "reserveInfo": "微信公众号「上海博物馆」→参观预约→选日期→预约成功刷身份证入馆。提前3~7天。"
+  },
+  {
+    "id": "nature",
+    "name": "上海自然博物馆",
+    "icon": "🦕",
+    "shortName": "自博",
+    "area": "C",
+    "areaName": "人民广场",
+    "priority": 1,
+    "crowded": true,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-c",
+    "desc": "恐龙化石、动物标本、地球科学，互动体验多。曲曲最爱的上海景点之一！全程室内空调。",
+    "ticket": "30元/人",
+    "reserve": true,
+    "elder": "60岁以上半价 = 15元",
+    "child": "1.3m以下免费，1.3~1.5m半价15元；1.6m以上凭学生证可购学生票约15元",
+    "hours": "9:00~17:15（16:30停止入馆），周一闭馆",
+    "subway": "13号线→自然博物馆站1号口，出站即达",
+    "tips": [
+      "互动项目多，曲曲可玩大半天",
+      "有电梯和轮椅通道",
+      "建议预留3小时"
+    ],
+    "food": [
+      "馆内餐厅（简单餐饮）",
+      "南京西路附近餐厅"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海自然博物馆&city=上海",
+    "reserveInfo": "微信「上海自然博物馆」公众号购票，或美团/大众点评网上购票，到现场扫码。提前1~3天。"
+  },
+  {
+    "id": "tianzifang",
+    "name": "田子坊·武康路",
+    "icon": "🎨",
+    "shortName": "田坊",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "shaded"
+    ],
+    "bg": "bg-a",
+    "desc": "石库门里弄艺术街区田子坊+上海最美马路武康路组合。都在徐汇，距民宿步行可达，文艺悠闲半日~一日。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天（店铺约10:00~22:00）",
+    "subway": "距民宿步行10~20分钟",
+    "tips": [
+      "上午9点人少，建议早去",
+      "弄堂较窄暑假人多",
+      "两侧咖啡馆可随时休息"
+    ],
+    "food": [
+      "老弄堂（田子坊内本帮菜）",
+      "永康路沿街餐厅",
+      "武康路咖啡馆"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=田子坊&city=上海"
+  },
+  {
+    "id": "nanjing",
+    "name": "南京路步行街",
+    "icon": "🛍️",
+    "shortName": "南步",
+    "area": "C",
+    "areaName": "人民广场",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "shaded"
+    ],
+    "bg": "bg-c",
+    "desc": "中国第一商业街，从外滩端到人民广场约1.2公里，平路好走。观光小火车5元/人，外公外婆可坐。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天",
+    "subway": "2/10号线→南京东路站",
+    "tips": [
+      "观光小火车非常适合腿脚不便的外公外婆",
+      "沿途有老字号点心铺",
+      "两侧商场可避暑休息"
+    ],
+    "food": [
+      "沈大成点心（老字号）",
+      "南京东路商场餐饮层"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=南京路步行街&city=上海"
+  },
+  {
+    "id": "lujiazui",
+    "name": "陆家嘴·滨江·东方明珠",
+    "icon": "🌊",
+    "shortName": "陆嘴",
+    "area": "D",
+    "areaName": "陆家嘴",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun"
+    ],
+    "bg": "bg-d",
+    "desc": "沿江步道+东方明珠/上海中心观光组合。陆家嘴是上海的金融中心，江景壮丽。",
+    "ticket": "滨江免费；东方明珠180~258元",
+    "reserve": true,
+    "elder": "60岁以上约149元起",
+    "child": "1m以下免费，1~1.4m约140元；1.6m以上凭学生证可购学生票约99元",
+    "hours": "滨江全天；东方明珠8:00~21:30",
+    "subway": "2号线→陆家嘴站；或从外滩坐轮渡过江（约2元）",
+    "tips": [
+      "轮渡过江体验很好，推荐",
+      "傍晚可看对岸外滩夜景",
+      "正大广场B2有美食"
+    ],
+    "food": [
+      "正大广场B2美食广场",
+      "正大广场美食层"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=陆家嘴滨江大道&city=上海",
+    "reserveInfo": "微信「东方明珠」公众号在线购票，选「城市之光一日票」149元/成人最划算。"
+  },
+  {
+    "id": "pearl",
+    "name": "东方明珠",
+    "icon": "🗼",
+    "shortName": "明珠",
+    "area": "D",
+    "areaName": "陆家嘴",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun"
+    ],
+    "bg": "bg-d",
+    "desc": "上海地标，高468米。观光层俯瞰上海全景。不想花钱在外面拍照也非常好看。",
+    "ticket": "180~258元/人",
+    "reserve": true,
+    "elder": "60岁以上约149元起",
+    "child": "1m以下免费，1~1.4m约140元；1.6m以上凭学生证可购学生票约99元",
+    "hours": "8:00~21:30",
+    "subway": "2号线→陆家嘴站，步行约5分钟",
+    "tips": [
+      "不想花钱只在外面拍照也很好",
+      "晴天视野好",
+      "不建议正午登高"
+    ],
+    "food": [
+      "正大广场美食层"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=东方明珠&city=上海",
+    "reserveInfo": "微信「东方明珠」公众号在线购票，选「城市之光一日票」149元/成人最划算。"
+  },
+  {
+    "id": "aquarium",
+    "name": "上海海洋水族馆",
+    "icon": "🐠",
+    "shortName": "水族",
+    "area": "D",
+    "areaName": "陆家嘴",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-d",
+    "desc": "亚洲最大海洋水族馆之一，155米海底隧道，鲨鱼海龟从头顶游过。室内空调，外公外婆和曲曲都能轻松游览。",
+    "ticket": "160元/人",
+    "reserve": true,
+    "elder": "60岁以上半价 = 80元",
+    "child": "1m以下免费，1~1.4m儿童票110元；1.6m以上凭学生证可购学生票约110元",
+    "hours": "9:00~18:00（17:30停止售票）",
+    "subway": "2号线→陆家嘴站，步行约5分钟",
+    "tips": [
+      "海底隧道是最大亮点",
+      "全程约2小时可看完",
+      "室内空调舒适"
+    ],
+    "food": [
+      "正大广场美食层"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海海洋水族馆&city=上海",
+    "reserveInfo": "美团/大众点评网上购票有优惠（约135元/成人），到现场扫码。外公外婆和曲曲优惠票建议现场窗口购买。"
+  },
+  {
+    "id": "tech",
+    "name": "上海科技馆",
+    "icon": "🔬",
+    "shortName": "科技",
+    "area": "D",
+    "areaName": "陆家嘴",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-d",
+    "desc": "大型科技体验馆，机器人、太空、生物、地震模拟。互动项目多，曲曲可玩大半天。",
+    "ticket": "45元/人",
+    "reserve": true,
+    "elder": "60岁以上半价 = 22元",
+    "child": "1.3m以下免费；1.6m以上凭学生证可购学生票约22元",
+    "hours": "9:00~17:15（周一闭馆）",
+    "subway": "2号线→上海科技馆站，出站即达",
+    "tips": [
+      "非常大，挑感兴趣的看即可",
+      "重点：1楼机器人、2楼生物、4楼太空",
+      "有馆内餐厅"
+    ],
+    "food": [
+      "馆内餐厅",
+      "正大广场"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海科技馆&city=上海",
+    "reserveInfo": "微信「上海科技馆」公众号或美团网上购票（约40元/成人）。外公外婆优惠票现场窗口出示身份证。"
+  },
+  {
+    "id": "jingan",
+    "name": "静安寺·南京西路",
+    "icon": "🛕",
+    "shortName": "静寺",
+    "area": "E",
+    "areaName": "静安·新天地",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-rain",
+      "shaded"
+    ],
+    "bg": "bg-e",
+    "desc": "1700年历史古刹静安寺+南京西路商圈组合。闹中取静，礼佛祈福后逛最繁华商业街。",
+    "ticket": "静安寺50元（含香火）",
+    "reserve": false,
+    "elder": "无额外优惠",
+    "child": "1.2m以下免费；寺庙一般无学生优惠，1.6m以上需全价50元",
+    "hours": "静安寺7:30~17:00；商圈约10:00~22:00",
+    "subway": "2/7号线→静安寺站，出站即见",
+    "tips": [
+      "环境清幽，适合外公外婆",
+      "旁边有久光百货可休息吃饭",
+      "南京西路逛完顺便来"
+    ],
+    "food": [
+      "久光百货美食层",
+      "光明邨大酒家（南京西路）"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=静安寺&city=上海"
+  },
+  {
+    "id": "xintiandi",
+    "name": "新天地·思南路",
+    "icon": "🏘️",
+    "shortName": "新天",
+    "area": "E",
+    "areaName": "静安·新天地",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-rain",
+      "shaded"
+    ],
+    "bg": "bg-e",
+    "desc": "石库门改建时尚街区新天地+思南路老洋房漫步组合。新天地热闹，思南路安静，一动一静搭配正好。两地步行约10分钟。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天（餐厅约10:00~22:00）",
+    "subway": "1/10/13号线→新天地站；或步行约25分钟",
+    "tips": [
+      "新天地和思南路步行约10分钟，放在一起最顺",
+      "思南路比武康路更安静，老洋房林立",
+      "室内有空调休息区"
+    ],
+    "food": [
+      "鼎泰丰小笼包",
+      "老吉士酒家"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=新天地&city=上海"
+  },
+  {
+    "id": "shanghaiCenter",
+    "name": "上海中心·上海之巅",
+    "icon": "🏙️",
+    "shortName": "中心",
+    "area": "D",
+    "areaName": "陆家嘴",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-d",
+    "desc": "中国第一高楼632米，118层观光厅俯瞰上海全景。全程室内空调，电梯55秒直达。",
+    "ticket": "180元/人",
+    "reserve": true,
+    "elder": "60岁以上约120元",
+    "child": "1m以下免费，1~1.4m儿童票120元；1.6m以上凭学生证可购学生票约120元",
+    "hours": "8:30~22:00",
+    "subway": "2号线→陆家嘴站，步行约8分钟",
+    "tips": [
+      "晴天视野最佳",
+      "全程室内不受天气影响",
+      "曲曲会特别喜欢"
+    ],
+    "food": [
+      "上海中心内餐厅",
+      "正大广场"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海中心大厦&city=上海",
+    "reserveInfo": "微信「上海中心大厦上海之巅」公众号在线购票。外公外婆优惠票现场窗口出示身份证。"
+  },
+  {
+    "id": "wukang",
+    "name": "武康路",
+    "icon": "🌳",
+    "shortName": "武康",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 2,
+    "crowded": true,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "shaded"
+    ],
+    "bg": "bg-a",
+    "desc": "上海最美马路之一，梧桐成荫，老别墅林立。武康大楼（熨斗楼）是最火打卡点。步道宽敞平缓。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天",
+    "subway": "距民宿步行约10~15分钟",
+    "tips": [
+      "早晨或傍晚光线好",
+      "两侧咖啡馆可随时休息",
+      "全程平路，对外公外婆友好"
+    ],
+    "food": [
+      "武康路沿街咖啡馆",
+      "永康路餐厅"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=武康路&city=上海"
+  },
+  {
+    "id": "suzhouRiver",
+    "name": "苏州河沿岸",
+    "icon": "🌊",
+    "shortName": "苏河",
+    "area": "E",
+    "areaName": "静安·新天地",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "no-rain",
+      "shaded"
+    ],
+    "bg": "bg-e",
+    "desc": "苏州河两岸整治一新，绿树成荫，步道平整。有艺术馆和咖啡馆，适合悠闲散步。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天",
+    "subway": "1号线→上海火车站附近，或3/4号线→中潭路站",
+    "tips": [
+      "建议上午或傍晚去",
+      "步道有座椅可休息",
+      "河景很美适合拍照"
+    ],
+    "food": [
+      "河畔咖啡馆",
+      "附近商场餐饮"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=苏州河步道&city=上海"
+  },
+  {
+    "id": "filmMuseum",
+    "name": "电影博物馆·徐家汇",
+    "icon": "🎬",
+    "shortName": "影博",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "indoor",
+      "outdoor"
+    ],
+    "bg": "bg-a",
+    "desc": "中国电影百年历史+徐家汇天主堂+徐家汇公园组合。电影博物馆室内看展，天主堂和公园户外休闲，都在徐汇区距民宿很近。",
+    "ticket": "电影博物馆60元；天主堂免费（登楼10元）；公园免费",
+    "reserve": true,
+    "elder": "电影博物馆60岁以上半价=30元",
+    "child": "电影博物馆1.3m以下免费；1.6m以上凭学生证可购学生票约30元；天主堂免费",
+    "hours": "电影博物馆9:00~17:00（周一闭馆）；天主堂周二~周日9:00~16:00",
+    "subway": "电影博物馆：9号线→打浦桥站；天主堂：1/9/11号线→徐家汇站",
+    "tips": [
+      "电影博物馆+天主堂+公园，室内户外搭配不累",
+      "天主堂哥特式建筑非常壮观，适合拍照",
+      "全程约4~5小时"
+    ],
+    "food": [
+      "徐家汇商圈餐厅（港汇恒隆、美罗城）"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海电影博物馆&city=上海",
+    "reserveInfo": "美团/大众点评网上购票，到现场扫码入园。建议提前1天。"
+  },
+  {
+    "id": "xujiahui",
+    "name": "徐家汇天主堂",
+    "icon": "⛪",
+    "shortName": "徐汇",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-a",
+    "desc": "上海最大的天主教堂，哥特式建筑，非常壮观。免费参观，登楼需10元。",
+    "ticket": "免费（登楼10元）",
+    "reserve": false,
+    "elder": "无额外优惠",
+    "child": "免费",
+    "hours": "周二~周日 9:00~16:00",
+    "subway": "1/9/11号线→徐家汇站，步行约5分钟",
+    "tips": [
+      "建筑很震撼，适合拍照",
+      "室内凉爽安静",
+      "旁边徐家汇公园可散步"
+    ],
+    "food": [
+      "徐家汇商圈餐厅（港汇恒隆、美罗城）"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=徐家汇天主堂&city=上海"
+  },
+  {
+    "id": "xujiahuiPark",
+    "name": "徐家汇公园",
+    "icon": "🌳",
+    "shortName": "徐园",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "shaded"
+    ],
+    "bg": "bg-a",
+    "desc": "绿地公园，有黑天鹅湖和历史建筑。距离民宿约15分钟步行，适合日常散步休息。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天开放",
+    "subway": "距民宿步行约15分钟",
+    "tips": [
+      "早上人少、空气好",
+      "有长椅可休息",
+      "黑天鹅很可爱"
+    ],
+    "food": [
+      "淮海路附近餐厅"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=徐家汇公园&city=上海"
+  },
+  {
+    "id": "artMuseum",
+    "name": "中华艺术宫",
+    "icon": "🎨",
+    "shortName": "艺宫",
+    "area": "F",
+    "areaName": "世博",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-f",
+    "desc": "世博中国馆改建，展示近现代中国艺术。建筑本身就是地标（红色斗拱造型），免费参观。",
+    "ticket": "免费",
+    "reserve": true,
+    "elder": "免费（需预约）",
+    "child": "免费（需预约）",
+    "hours": "10:00~18:00（17:00停止入馆），周一闭馆",
+    "subway": "8号线→中华艺术宫站",
+    "tips": [
+      "非常大，建议挑重点看",
+      "馆内有空调",
+      "建筑外观拍照很出片"
+    ],
+    "food": [
+      "馆内简餐",
+      "世博源商场餐饮"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=中华艺术宫&city=上海",
+    "reserveInfo": "微信「中华艺术宫」公众号预约参观。提前1~3天。"
+  },
+  {
+    "id": "cityPlan",
+    "name": "上海城市规划展示馆",
+    "icon": "🏙️",
+    "shortName": "城规",
+    "area": "C",
+    "areaName": "人民广场",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "indoor"
+    ],
+    "bg": "bg-c",
+    "desc": "上海城市沙盘模型非常壮观，可以看到整个上海市的缩影。曲曲特别喜欢！",
+    "ticket": "30元/人",
+    "reserve": false,
+    "elder": "60岁以上半价 = 15元",
+    "child": "1.3m以下免费；1.6m以上凭学生证可购学生票约15元",
+    "hours": "9:00~17:00",
+    "subway": "2号线→人民广场站，步行约3分钟",
+    "tips": [
+      "沙盘模型是最大亮点",
+      "可与上海博物馆同天游览",
+      "全程约1.5小时"
+    ],
+    "food": [
+      "人民广场附近餐厅"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=上海城市规划展示馆&city=上海"
+  },
+  {
+    "id": "family",
+    "name": "亲友欢聚日①",
+    "icon": "🎉",
+    "shortName": "聚会",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 2,
+    "crowded": false,
+    "tags": [
+      "indoor",
+      "outdoor"
+    ],
+    "bg": "bg-a",
+    "desc": "周末亲友聚会！在民宿附近或淮海中路商圈一起吃饭、逛街、拍照，轻松愉快的一天。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "商场约10:00~22:00",
+    "subway": "距民宿步行可达",
+    "tips": [
+      "适合周末约在上海的亲友一起活动",
+      "淮海路商圈室内空调，走累了随时休息",
+      "可一起买伴手礼和特产"
+    ],
+    "food": [
+      "iapm商场餐饮层",
+      "淮海路沿街餐厅",
+      "光明邨大酒家（排队买熟食）"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=淮海中路iapm&city=上海"
+  },
+  {
+    "id": "sinan",
+    "name": "思南路·复兴中路",
+    "icon": "🌳",
+    "shortName": "思南",
+    "area": "E",
+    "areaName": "静安·新天地",
+    "priority": 3,
+    "crowded": false,
+    "tags": [
+      "outdoor",
+      "no-sun",
+      "shaded"
+    ],
+    "bg": "bg-e",
+    "desc": "思南路老洋房+复兴中路梧桐漫步。法租界风情，安静优雅，适合外公外婆悠闲散步。",
+    "ticket": "免费",
+    "reserve": false,
+    "elder": "免费",
+    "child": "免费",
+    "hours": "全天",
+    "subway": "10/13号线→新天地站，步行约10分钟",
+    "tips": [
+      "比武康路更安静",
+      "老洋房建筑很有味道",
+      "沿途咖啡馆可休息"
+    ],
+    "food": [
+      "思南路沿街咖啡馆",
+      "复兴中路餐厅"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=思南路&city=上海"
+  },
+  {
+    "id": "family2",
+    "name": "亲友欢聚日②",
+    "icon": "🎉",
+    "shortName": "聚会",
+    "area": "A",
+    "areaName": "徐汇周边",
+    "priority": 2,
+    "crowded": false,
+    "tags": [
+      "indoor",
+      "outdoor"
+    ],
+    "bg": "bg-a",
+    "desc": "又一个周末聚会日！可在民宿附近或新天地等地方与亲友一起活动，也可以补去没去成的景点。",
+    "ticket": "视安排而定",
+    "reserve": false,
+    "elder": "视安排而定",
+    "child": "视安排而定",
+    "hours": "灵活",
+    "subway": "视安排而定",
+    "tips": [
+      "可以约不同亲友，或与上次不同的活动",
+      "也可补去前面因天气/体力没去成的景点",
+      "建议提前和亲友约好时间和碰面地点"
+    ],
+    "food": [
+      "视当天安排"
+    ],
+    "mapUrl": "https://uri.amap.com/search?keyword=新天地&city=上海"
+  }
+];
+
+// 默认每日安排
+const defaultAssignments = {
+  "7-15": null,
+  "7-16": "artMuseum",
+  "7-17": "tianzifang",
+  "7-18": "family",
+  "7-19": "nature",
+  "7-20": "bund",
+  "7-21": "yuyuan",
+  "7-22": "lujiazui",
+  "7-23": "aquarium",
+  "7-24": "tech",
+  "7-25": "family2",
+  "7-26": "museum",
+  "7-27": "jingan",
+  "7-28": "xintiandi",
+  "7-29": "shanghaiCenter",
+  "7-30": "filmMuseum",
+  "7-31": "suzhouRiver",
+  "8-1": null
+};
+
+// 星期映射
+const dayNames = {"7-15": ["三", "抵达"], "7-16": ["四", "中华艺术宫"], "7-17": ["五", "田子坊·武康路"], "7-18": ["六", "亲友欢聚日①"], "7-19": ["日", "自然博物馆"], "7-20": ["一", "外滩·南京路"], "7-21": ["二", "豫园·城隍庙"], "7-22": ["三", "陆家嘴·东方明珠"], "7-23": ["四", "海洋水族馆"], "7-24": ["五", "科技馆"], "7-25": ["六", "亲友欢聚日②"], "7-26": ["日", "上海博物馆·城市规划馆"], "7-27": ["一", "静安寺·南京西路"], "7-28": ["二", "新天地+思南路"], "7-29": ["三", "上海中心"], "7-30": ["四", "电影博物馆+徐家汇"], "7-31": ["五", "苏州河收尾"], "8-1": ["六", "离沪"]};
+
+// ============ localStorage 工具 ============
+function getVisited(){try{return JSON.parse(localStorage.getItem('sh_visited')||'[]')}catch(e){return[]}}
+function saveVisited(v){localStorage.setItem('sh_visited',JSON.stringify(v))}
+
+function getDayAssignments(){try{return JSON.parse(localStorage.getItem('sh_day_assignments')||'{}')}catch(e){return{}}}
+function saveDayAssignments(a){localStorage.setItem('sh_day_assignments',JSON.stringify(a))}
+
+// ============ 渲染景点库 ============
+function getSpotById(id){return spotsData.find(s=>s.id===id)}
+
+function renderSpots(filter){
+  const visited=getVisited();
+  const list=document.getElementById('spotList');
+  let html='';
+  const sorted=[...spotsData].sort((a,b)=>a.priority-b.priority);
+  
+  sorted.forEach(s=>{
+    const isVisited=visited.includes(s.id);
+    let show=true;
+    if(filter==='indoor'){show=s.tags.includes('indoor')}
+    else if(filter==='sunny'){show=!s.tags.includes('no-sun')||s.tags.includes('indoor')}
+    else if(filter==='cool'){show=s.tags.includes('indoor')||s.tags.includes('shaded')}
+    
+    if(!show)return;
+    
+    const bgClass=s.bg||'bg-a';
+    const priClass='pri-'+s.priority;
+    const priText=s.priority===1?'必去':s.priority===2?'推荐':'可选';
+    
+    let tagsHtml='';
+    s.tags.forEach(t=>{
+      if(t==='indoor')tagsHtml+='<span class="wtag wtag-indoor">室内 全天候</span>';
+      else if(t==='outdoor')tagsHtml+='<span class="wtag wtag-outdoor">户外 需防晒</span>';
+      else if(t==='no-sun')tagsHtml+='<span class="wtag wtag-sun">不宜暴晒</span>';
+      else if(t==='no-rain')tagsHtml+='<span class="wtag wtag-rain">不宜雨天</span>';
+      else if(t==='shaded')tagsHtml+='<span class="wtag wtag-shaded">有遮阴 可避暑</span>';
+    });
+    if(s.crowded){tagsHtml+='<span class="wtag" style="background:#fff3e0;color:#e65100;border:1px solid #ffcc80">周末人多 建议工作日去</span>';}
+    
+    let tipsHtml=s.tips.map(t=>'<p>'+t+'</p>').join('');
+    let foodHtml=s.food.map(f=>'<span style="display:inline-block;background:#fff8e1;color:#5d4037;border-radius:6px;padding:4px 10px;font-size:15px;margin:2px">'+f+'</span>').join('');
+    
+    let reserveHtml='';
+    if(s.reserve){
+      reserveHtml='<div class="reserve-box">'+(s.reserveInfo||'建议提前网上购票预约，避免现场排队。')+'</div>';
+    }
+    
+    html+=`
+    <div class="spot-card ${isVisited?'visited':''}" id="spot-${s.id}">
+      <div class="spot-hd" onclick="tog(this)">
+        <div style="flex:1">
+          <div class="spot-title">${s.icon} ${s.name}</div>
+          <div class="spot-sub">
+            <span class="pri ${priClass}">${priText}</span>
+            <span style="background:#f5f6f8;color:#888;border-radius:6px;padding:4px 10px;font-size:14px">${s.areaName}</span>
+            ${tagsHtml}
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <button class="visit-btn ${isVisited?'done':''}" onclick="event.stopPropagation();toggleVisit('${s.id}',this)" style="margin-top:0">${isVisited?'✓ 已去过':'标记去过'}</button>
+          <div class="spot-arr">▼</div>
+        </div>
+      </div>
+      <div class="spot-body">
+        <p style="font-size:17px;color:#333;margin:10px 0 6px">${s.desc}</p>
+        
+        <div style="background:#f0faf0;border-radius:10px;padding:12px 14px;margin:10px 0">
+          <p style="font-size:15px;color:#555">🎫 门票：<span class="price-hl">${s.ticket}</span></p>
+          <p style="font-size:15px;color:#555;margin-top:6px">👴 外公外婆优惠：<span class="discount-hl">${s.elder}</span></p>
+          <p style="font-size:15px;color:#555;margin-top:6px">👦 曲曲优惠：<span class="discount-hl">${s.child}</span></p>
+          <p style="font-size:15px;color:#555;margin-top:6px">⏰ 开放：<strong>${s.hours}</strong></p>
+        </div>
+        
+        ${reserveHtml}
+        
+        <div class="info-b">
+          <p>🚇 <strong>交通：</strong>${s.subway}</p>
+          <p>💡 <strong>小贴士：</strong>${tipsHtml}</p>
+        </div>
+        
+        <div style="margin-top:8px">
+          <p style="font-size:15px;color:#555">🍜 附近推荐：</p>
+          <div style="margin-top:4px">${foodHtml}</div>
+        </div>
+        
+        <div style="margin-top:10px">
+          <a class="map-btn" href="${s.mapUrl}" target="_blank">导航到${s.name.split('·')[0].trim()}</a>
+        </div>
+      </div>
+    </div>`;
+  });
+  
+  list.innerHTML=html;
+}
+
+function toggleVisit(id,btn){
+  let v=getVisited();
+  if(v.includes(id)){v=v.filter(x=>x!==id)}
+  else{v.push(id)}
+  saveVisited(v);
+  const card=document.getElementById('spot-'+id);
+  if(v.includes(id)){
+    card.classList.add('visited');
+    btn.classList.add('done');
+    btn.textContent='✓ 已去过';
+  }else{
+    card.classList.remove('visited');
+    btn.classList.remove('done');
+    btn.textContent='标记已去过';
+  }
+}
+
+function resetAll(){
+  if(confirm('确定要清除所有「已去过」标记吗？')){
+    localStorage.removeItem('sh_visited');
+    localStorage.removeItem('sh_day_assignments');
+    renderSpots(currentFilter);
+    location.reload();
+  }
+}
+
+let currentFilter='all';
+function filterSpots(type,btn){
+  currentFilter=type;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderSpots(type);
+}
+
+// ============ 导航 & 折叠 ============
+function showPage(id,btn){
+  var pages=document.querySelectorAll('.page');
+  for(var i=0;i<pages.length;i++){pages[i].classList.remove('active');}
+  var btns=document.querySelectorAll('.nav button');
+  for(var i=0;i<btns.length;i++){btns[i].classList.remove('active');}
+  var targetPage=document.getElementById('page-'+id);
+  if(targetPage) targetPage.classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(id==='spots') renderSpots(currentFilter);
+  window.scrollTo(0,0);
+}
+
+document.getElementById('navBar').addEventListener('click',function(e){
+  var btn=e.target.closest('button');
+  if(btn && btn.tagName==='BUTTON'){
+    var page=btn.getAttribute('data-page');
+    if(page) showPage(page,btn);
+  }
+});
+
+function tog(hd){
+  var body=hd.nextElementSibling;
+  var arr=hd.querySelector('.trip-arr');
+  if(body) body.classList.toggle('open');
+  if(arr) arr.classList.toggle('open');
+}
+
+// ============ 每日安排编辑功能 ============
+function openEditModal(dateKey) {
+  const modal = document.getElementById('editModal');
+  const list = document.getElementById('editSpotList');
+  const visited = getVisited();
+  const currentAssignments = getDayAssignments();
+  
+  // Get current spot for this date
+  const dayEl = document.querySelector('.trip-day[data-date="' + dateKey + '"]');
+  const currentSpotId = dayEl ? dayEl.getAttribute('data-current-spot') : '';
+  
+  let html = '';
+  
+  // Group by priority
+  const priOrder = [1, 2, 3];
+  const priLabels = {1: '必去', 2: '推荐', 3: '可选'};
+  
+  priOrder.forEach(pri => {
+    const groupSpots = spotsData.filter(s => s.priority === pri && s.id !== currentSpotId);
+    if(groupSpots.length === 0) return;
+    
+    html += '<div style="margin:12px 0 8px;font-size:16px;font-weight:700;color:#555">' + priLabels[pri] + '</div>';
+    
+    groupSpots.forEach(s => {
+      const isVisited = visited.includes(s.id);
+      
+      if(isVisited) return; // 只排除已去过的景点
+      
+      let tagsText = '';
+      if(s.tags.includes('indoor')) tagsText += '室内 ';
+      if(s.tags.includes('outdoor')) tagsText += '户外 ';
+      
+      html += '<div class="spot-picker-item" data-date="' + dateKey + '" data-spot-id="' + s.id + '">';
+      html += '<div style="font-size:18px;font-weight:700">' + s.icon + ' ' + s.name + '</div>';
+      html += '<div style="font-size:14px;color:#888;margin-top:3px">' + s.areaName + ' · ' + tagsText + s.ticket + '</div>';
+      html += '</div>';
+    });
+  });
+  
+  if(html === '') {
+    html = '<div style="text-align:center;color:#888;padding:20px">没有可更换的景点了<br>所有景点都已安排或已去过</div>';
+  }
+  
+  list.innerHTML = html;
+  modal.style.display = 'block';
+}
+
+function closeEditModal() {
+  document.getElementById('editModal').style.display = 'none';
+}
+
+// 事件委托：景点选择列表点击
+document.addEventListener('click', function(e) {
+  const item = e.target.closest('.spot-picker-item');
+  if(item) {
+    const dateKey = item.getAttribute('data-date');
+    const spotId = item.getAttribute('data-spot-id');
+    if(dateKey && spotId) changeDaySpot(dateKey, spotId);
+  }
+});
+
+function changeDaySpot(dateKey, spotId) {
+  const spot = getSpotById(spotId);
+  if(!spot) return;
+  
+  // Save assignment
+  const assignments = getDayAssignments();
+  assignments[dateKey] = spotId;
+  saveDayAssignments(assignments);
+  
+  // Mark as visited
+  const visited = getVisited();
+  if(!visited.includes(spotId)) {
+    visited.push(spotId);
+    saveVisited(visited);
+  }
+  
+  // Regenerate the day's HTML
+  const dayEl = document.querySelector('.trip-day[data-date="' + dateKey + '"]');
+  if(dayEl) {
+    const defaultSpotId = defaultAssignments[dateKey] || '';
+    const isDefault = (defaultSpotId === spotId);
+    
+    // We need to regenerate - for simplicity, update title and add a banner
+    const dayNum = parseInt(dateKey.split('-')[1]);
+    const dayName = dayNames[dateKey] ? dayNames[dateKey][0] : '';
+    const priText = spot.priority === 1 ? '必去' : spot.priority === 2 ? '推荐' : '可选';
+    
+    let weatherLabels = [];
+    if(spot.tags.includes('indoor')) weatherLabels.push('室内');
+    if(spot.tags.includes('outdoor')) weatherLabels.push('户外');
+    if(spot.tags.includes('shaded')) weatherLabels.push('有遮阴');
+    const weatherStr = weatherLabels.length > 0 ? ' · ' + weatherLabels.join('·') : '';
+    
+    // Update header
+    const titleEl = dayEl.querySelector('.trip-title');
+    const subEl = dayEl.querySelector('.trip-sub');
+    if(titleEl) titleEl.textContent = spot.icon + ' ' + dateKey.split('-')[0] + '月' + dayNum + '日 周' + dayName + ' ' + spot.name;
+    if(subEl) subEl.textContent = spot.areaName + ' · ' + priText + weatherStr;
+    
+    // Update data attributes
+    dayEl.setAttribute('data-current-spot', spotId);
+    
+    // Add changed banner to body
+    const body = dayEl.querySelector('.trip-body');
+    if(body) {
+      // Remove old banners
+      const oldBanners = body.querySelectorAll('.day-changed-banner');
+      oldBanners.forEach(b => b.remove());
+      
+      const banner = document.createElement('div');
+      banner.className = 'day-changed-banner';
+      banner.innerHTML = '<strong>⚠️ 已调整为此景点</strong><br>详细交通、门票、预约信息请在「景点库」中查看';
+      body.insertBefore(banner, body.firstChild);
+    }
+    
+    // Update calendar
+    updateCalendar(dateKey, spot);
+  }
+  
+  closeEditModal();
+}
+
+function restoreDay(dateKey) {
+  const defaultSpotId = defaultAssignments[dateKey];
+  if(!defaultSpotId) return;
+  
+  // Remove from custom assignments
+  const assignments = getDayAssignments();
+  delete assignments[dateKey];
+  saveDayAssignments(assignments);
+  
+  // Reload page to restore cleanly
+  location.reload();
+}
+
+function updateCalendar(dateKey, spot) {
+  const calDay = document.querySelector('.cal-day[data-cal-date="' + dateKey + '"]');
+  if(!calDay) return;
+  
+  // Remove old priority classes
+  calDay.classList.remove('pri1', 'pri2', 'pri3', 'trip');
+  
+  // Add new class
+  if(spot.priority === 1) calDay.classList.add('pri1');
+  else if(spot.priority === 2) calDay.classList.add('pri2');
+  else calDay.classList.add('pri3');
+  
+  // Update label (full name)
+  const label = calDay.querySelector('.label');
+  if(label) label.textContent = spot.name.split('·')[0].trim();
+  // Update label-short (2-char short name)
+  const labelShort = calDay.querySelector('.label-short');
+  if(labelShort) labelShort.textContent = spot.shortName || spot.name.substring(0, 2);
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+  const modal = document.getElementById('editModal');
+  if(e.target === modal) closeEditModal();
+});
+
+// ============ 初始化：加载保存的自定义安排 ============
+function loadCustomAssignments() {
+  const assignments = getDayAssignments();
+  for(const [dateKey, spotId] of Object.entries(assignments)) {
+    const spot = getSpotById(spotId);
+    if(!spot) continue;
+    
+    const dayEl = document.querySelector('.trip-day[data-date="' + dateKey + '"]');
+    if(!dayEl) continue;
+    
+    const dayNum = parseInt(dateKey.split('-')[1]);
+    const dayName = dayNames[dateKey] ? dayNames[dateKey][0] : '';
+    const priText = spot.priority === 1 ? '必去' : spot.priority === 2 ? '推荐' : '可选';
+    
+    let weatherLabels = [];
+    if(spot.tags.includes('indoor')) weatherLabels.push('室内');
+    if(spot.tags.includes('outdoor')) weatherLabels.push('户外');
+    if(spot.tags.includes('shaded')) weatherLabels.push('有遮阴');
+    const weatherStr = weatherLabels.length > 0 ? ' · ' + weatherLabels.join('·') : '';
+    
+    const titleEl = dayEl.querySelector('.trip-title');
+    const subEl = dayEl.querySelector('.trip-sub');
+    if(titleEl) titleEl.textContent = spot.icon + ' ' + dateKey.split('-')[0] + '月' + dayNum + '日 周' + dayName + ' ' + spot.name;
+    if(subEl) subEl.textContent = spot.areaName + ' · ' + priText + weatherStr;
+    
+    dayEl.setAttribute('data-current-spot', spotId);
+    
+    const body = dayEl.querySelector('.trip-body');
+    if(body) {
+      const banner = document.createElement('div');
+      banner.className = 'day-changed-banner';
+      banner.innerHTML = '<strong>⚠️ 已调整为此景点</strong><br>详细交通、门票、预约信息请在「景点库」中查看';
+      body.insertBefore(banner, body.firstChild);
+      
+      // Add restore button
+      const defaultSpotId = defaultAssignments[dateKey];
+      if(defaultSpotId) {
+        const defaultSpot = getSpotById(defaultSpotId);
+        const defaultName = defaultSpot ? defaultSpot.name : '原推荐';
+        const restoreBtn = document.createElement('button');
+        restoreBtn.className = 'restore-btn';
+        restoreBtn.textContent = '↩ 恢复原推荐：' + defaultName;
+        restoreBtn.onclick = function() { restoreDay(dateKey); };
+        body.appendChild(restoreBtn);
+      }
+    }
+    
+    updateCalendar(dateKey, spot);
+  }
+}
+
+// 日历点击：手机上隐藏了景点名称，点击日期弹出自定义提示
+(function(){
+  let calTooltip=null;
+  document.addEventListener('click',function(e){
+    const cell=e.target.closest('.cal-day');
+    if(!cell)return;
+    if(!cell.dataset.calDate)return;
+    const dateKey=cell.dataset.calDate;
+    const customAssignments=getDayAssignments();
+    const spotId=customAssignments[dateKey]||defaultAssignments[dateKey];
+    if(!spotId)return;
+    const spot=getSpotById(spotId);
+    if(!spot)return;
+    // 如果tooltip已存在，移除
+    if(calTooltip){calTooltip.remove();calTooltip=null;return;}
+    // 创建tooltip
+    calTooltip=document.createElement('div');
+    calTooltip.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:14px;padding:16px 22px;box-shadow:0 4px 24px rgba(0,0,0,.25);z-index:300;text-align:center;max-width:280px;font-size:17px';
+    calTooltip.innerHTML='<div style="font-size:28px;margin-bottom:6px">'+spot.icon+'</div><div style="font-weight:700;color:#1a1a1a">'+spot.name+'</div><div style="font-size:14px;color:#888;margin-top:4px">'+spot.areaName+' · '+spot.hours+'</div><div style="font-size:13px;color:#aaa;margin-top:10px">点击任意位置关闭</div>';
+    document.body.appendChild(calTooltip);
+    // 点击关闭
+    function closeTooltip(ev){
+      if(calTooltip){calTooltip.remove();calTooltip=null;}
+      document.removeEventListener('click',closeTooltip);
+    }
+    setTimeout(function(){document.addEventListener('click',closeTooltip)},10);
+  });
+})();
+
+// 初始化
+renderSpots('all');
+loadCustomAssignments();
+</script>
+
+</body>
+</html>
